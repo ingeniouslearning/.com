@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ingenious Learning — Phonics, Maths, Music & Art Classes for Kids in Chitlapakkam, Chennai</title>
+<meta name="description" content="Jolly Phonics, Tamil Phonics, Abacus, Vedic Maths, Carnatic Music, Spoken English and more — live, personalised classes for ages 4–15 in Chitlapakkam, Chennai. Founded by Preethi Prathap.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Baloo+Tamma+2:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --cream:#FFF8EC;
+    --paper:#FFFDF7;
+    --ink:#1B2A2A;
+    --teal:#1F4E45;
+    --teal-dark:#153732;
+    --coral:#E85D4C;
+    --coral-dark:#C6432F;
+    --mango:#F2A93B;
+    --plum:#6C5B9E;
+    --line:#E7DCC6;
+    --radius:20px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',system-ui,sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{font-family:'Baloo 2',sans-serif;line-height:1.15;font-weight:700;}
+  .ta{font-family:'Baloo Tamma 2',sans-serif;}
+  .container{width:min(92%,1240px);margin-inline:auto;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  :focus-visible{outline:3px solid var(--mango);outline-offset:3px;}
+  /* ---------- Playful motion & doodles ---------- */
+  @keyframes floaty{0%,100%{transform:translateY(0) rotate(0deg);}50%{transform:translateY(-14px) rotate(6deg);}}
+  @keyframes bobble{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
+  @keyframes wiggle{0%,100%{transform:rotate(0deg);}25%{transform:rotate(-9deg);}75%{transform:rotate(9deg);}}
+  @keyframes popIn{0%{transform:scale(.7);opacity:0;}70%{transform:scale(1.08);}100%{transform:scale(1);opacity:1;}}
+  @keyframes drawLine{from{stroke-dashoffset:320;}to{stroke-dashoffset:0;}}
+  @keyframes confettiFall{to{transform:translateY(110vh) rotate(720deg);opacity:0;}}
+
+  .doodle{position:absolute;pointer-events:none;user-select:none;opacity:.55;font-size:1.8rem;animation:floaty 7s ease-in-out infinite;}
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .6s ease,transform .6s ease;}
+  .reveal.in{opacity:1;transform:none;}
+
+  .logo-mark{transition:transform .25s ease;}
+  .logo:hover .logo-mark{animation:wiggle .5s ease-in-out;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important;animation-iteration-count:1 !important;transition-duration:0.001ms !important;}
+    .reveal{opacity:1 !important;transform:none !important;}
+    .doodle{display:none;}
+  }
+
+  .btn{
+    display:inline-flex;align-items:center;gap:.5rem;
+    padding:.85rem 1.7rem;border-radius:999px;font-weight:700;
+    text-decoration:none;font-size:1rem;border:2px solid transparent;
+    transition:transform .15s ease, box-shadow .15s ease;
+    cursor:pointer;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-solid{background:var(--coral);color:#fff;box-shadow:0 6px 0 var(--coral-dark);}
+  .btn-solid:hover{box-shadow:0 8px 0 var(--coral-dark);}
+  .btn-solid:active{transform:translateY(2px);box-shadow:0 3px 0 var(--coral-dark);}
+  .btn-ghost{background:transparent;border-color:currentColor;}
+  .btn-ghost.on-dark{color:var(--cream);}
+  .btn-ghost.on-light{color:var(--teal);border-color:var(--teal);}
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;top:0;z-index:100;
+    background:var(--paper);
+    border-bottom:2px solid var(--line);
+  }
+  .eyebrow-bar{
+    background:var(--teal-dark);color:var(--cream);
+    text-align:center;font-size:.85rem;font-weight:600;
+    padding:.45rem 0;letter-spacing:.02em;
+  }
+  .eyebrow-bar strong{color:var(--mango);}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:.9rem 0;}
+  .logo{
+    font-size:1.5rem;font-weight:800;color:var(--teal-dark);
+    display:flex;align-items:center;gap:.55rem;text-decoration:none;
+  }
+  .logo-mark{height:38px;width:auto;flex:none;}
+  @media (max-width:520px){
+    .logo{font-size:1.2rem;gap:.4rem;}
+    .logo-mark{height:30px;}
+  }
+  .nav-links{display:flex;gap:2rem;font-weight:600;align-items:center;}
+  .nav-links a{text-decoration:none;color:var(--ink);position:relative;padding-bottom:2px;}
+  .nav-links a:hover{color:var(--coral-dark);}
+  .nav-cta{display:flex;gap:.7rem;align-items:center;}
+  .hamburger{display:none;background:none;border:none;cursor:pointer;padding:.4rem;}
+  .hamburger span{display:block;width:26px;height:3px;background:var(--teal-dark);margin:5px 0;border-radius:2px;}
+
+  @media (max-width:860px){
+    .nav-links{
+      position:absolute;top:100%;left:0;right:0;
+      background:var(--paper);flex-direction:column;align-items:flex-start;
+      padding:1.2rem 6%;gap:1rem;border-bottom:2px solid var(--line);
+      display:none;
+    }
+    .nav-links.open{display:flex;}
+    .hamburger{display:block;}
+    nav .nav-cta .btn-ghost{display:none;}
+  }
+
+  /* ---------- Hero (chalkboard) ---------- */
+  .hero{
+    position:relative;overflow:hidden;
+    background:var(--teal);
+    color:var(--cream);
+    padding:5rem 0 6.5rem;
+    background-image:
+      radial-gradient(circle at 8% 20%, rgba(255,255,255,0.04) 0, transparent 45%),
+      radial-gradient(circle at 92% 80%, rgba(255,255,255,0.05) 0, transparent 40%);
+  }
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center;}
+  @media (max-width:900px){.hero-grid{grid-template-columns:1fr;}}
+  .hero-eyebrow{
+    display:inline-flex;align-items:center;gap:.5rem;
+    background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);
+    padding:.4rem .9rem;border-radius:999px;font-size:.85rem;font-weight:600;
+    margin-bottom:1.3rem;
+  }
+  .hero-eyebrow .stars{color:var(--mango);letter-spacing:1px;}
+  .hero h1{font-size:clamp(2.2rem,4.5vw,3.4rem);color:#fff;}
+  .hero h1 .underline{position:relative;display:inline-block;color:var(--mango);}
+  .hero h1 .underline svg{position:absolute;left:0;right:0;bottom:-.35em;width:100%;height:.42em;overflow:visible;}
+  .hero h1 .underline svg path{
+    stroke:var(--coral);stroke-width:7;fill:none;stroke-linecap:round;
+    stroke-dasharray:320;animation:drawLine 1.3s ease-out .4s both;
+  }
+  .hero{position:relative;}
+  .hero p.lede{font-size:1.15rem;color:#DCEAE5;max-width:46ch;margin-top:1.1rem;}
+  .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2.1rem;}
+  .hero-chips{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:2.2rem;}
+  .hero-chip{
+    background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);
+    padding:.5rem .95rem;border-radius:12px;font-size:.88rem;font-weight:600;color:#EAF3F0;
+    transition:transform .2s ease,background .2s ease;cursor:default;
+  }
+  .hero-chip:hover{transform:translateY(-4px) rotate(-2deg);background:rgba(255,255,255,.16);}
+  .hero-art{position:relative;}
+  .board{
+    background:var(--teal-dark);border:6px solid #0F2A26;border-radius:14px;
+    padding:2rem;box-shadow:0 25px 50px rgba(0,0,0,.35);transform:rotate(-2deg);
+    animation:bobble 5s ease-in-out infinite;
+  }
+  .board:hover{transform:rotate(0deg) scale(1.02);transition:transform .3s ease;}
+  .board .chalk-line{border:none;border-top:2px dashed rgba(255,255,255,.25);margin:.9rem 0;}
+  .board-title{font-size:1.05rem;color:var(--mango);font-weight:700;letter-spacing:.03em;text-transform:uppercase;}
+  .board-list{list-style:none;margin-top:.8rem;display:flex;flex-direction:column;gap:.6rem;}
+  .board-list li{display:flex;align-items:center;gap:.6rem;color:#EAF3F0;font-size:1rem;}
+  .board-list li::before{content:"✦";color:var(--coral);}
+
+  /* ---------- Trust strip ---------- */
+  .trust{background:var(--paper);border-bottom:2px solid var(--line);padding:1.6rem 0;}
+  .trust-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1.4rem;text-align:center;}
+  .trust-item{flex:1;min-width:140px;}
+  .trust-item{transition:transform .2s ease;}
+  .trust-item:hover{transform:translateY(-4px) scale(1.04);}
+  .trust-item .num{font-family:'Baloo 2';font-size:1.9rem;color:var(--coral-dark);font-weight:800;}
+  .trust-item .lbl{font-size:.85rem;color:#5b6b68;font-weight:600;}
+
+  /* ---------- Section shell ---------- */
+  section{padding:5.5rem 0;}
+  .section-eyebrow{
+    text-align:center;font-weight:700;color:var(--coral-dark);
+    letter-spacing:.08em;text-transform:uppercase;font-size:.85rem;margin-bottom:.6rem;
+  }
+  .section-title{text-align:center;font-size:clamp(1.9rem,3.5vw,2.6rem);color:var(--teal-dark);margin-bottom:1rem;}
+  .section-lede{text-align:center;max-width:640px;margin:0 auto 3rem;color:#4d5c59;font-size:1.08rem;}
+
+  /* ---------- About ---------- */
+  .about{background:var(--paper);}
+  .about-cols{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;margin-bottom:3.5rem;}
+  @media (max-width:800px){.about-cols{grid-template-columns:1fr;}}
+  .about-copy p{color:#3f4d4a;margin-bottom:1rem;}
+  .about-copy .founder{
+    display:flex;gap:1rem;align-items:center;margin-top:1.6rem;
+    padding:1.1rem 1.3rem;background:var(--cream);border-radius:14px;border:1px solid var(--line);
+  }
+  .founder-badge{
+    width:52px;height:52px;border-radius:50%;background:var(--coral);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-family:'Baloo 2';font-weight:800;font-size:1.2rem;flex:none;
+  }
+  .founder-text strong{display:block;color:var(--teal-dark);}
+  .founder-text span{font-size:.9rem;color:#5b6b68;}
+  .locate-card{background:var(--teal);color:var(--cream);border-radius:var(--radius);padding:2rem;}
+  .locate-card h3{color:#fff;margin-bottom:.7rem;}
+  .locate-card address{font-style:normal;color:#DCEAE5;margin-bottom:1.4rem;line-height:1.7;}
+  .locate-actions{display:flex;gap:.8rem;flex-wrap:wrap;}
+
+  /* ---------- Testimonials (notebook) ---------- */
+  .testimonials{
+    background:var(--cream);
+    background-image:repeating-linear-gradient(180deg,transparent,transparent 38px,var(--line) 39px);
+  }
+  .t-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.6rem;}
+  .t-card{
+    background:var(--paper);border-radius:16px;padding:1.7rem;
+    border:1px solid var(--line);box-shadow:0 8px 22px rgba(31,78,69,.06);
+    position:relative;transition:transform .22s ease,box-shadow .22s ease;
+  }
+  .t-card:nth-child(odd):hover{transform:rotate(1.2deg) translateY(-5px);box-shadow:0 16px 30px rgba(31,78,69,.12);}
+  .t-card:nth-child(even):hover{transform:rotate(-1.2deg) translateY(-5px);box-shadow:0 16px 30px rgba(31,78,69,.12);}
+  .t-card .quote-mark{
+    font-family:'Baloo 2';font-size:2.6rem;color:var(--mango);line-height:1;margin-bottom:.4rem;
+  }
+  .t-card p.body{color:#3f4d4a;font-size:.98rem;}
+  .t-card .who{margin-top:1.1rem;font-weight:700;color:var(--teal-dark);font-size:.95rem;}
+
+  /* ---------- Courses ---------- */
+  .courses{background:var(--paper);}
+  .filter-row{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center;margin-bottom:2.6rem;}
+  .filter-chip{
+    font-size:.85rem;font-weight:700;padding:.5rem 1.05rem;border-radius:999px;
+    border:1.5px solid var(--line);color:#4d5c59;background:var(--cream);
+    transition:transform .18s ease, background .18s ease, color .18s ease, border-color .18s ease;
+    cursor:pointer;font-family:inherit;
+  }
+  .filter-chip:hover{transform:translateY(-3px) rotate(-2deg);border-color:var(--chip,var(--teal));}
+  .filter-chip.active{
+    background:var(--chip,var(--teal-dark));border-color:var(--chip,var(--teal-dark));
+    color:#fff;transform:translateY(-2px);
+    box-shadow:0 5px 0 rgba(0,0,0,.12);
+  }
+
+  /* ---------- Course finder ---------- */
+  .finder{
+    background:var(--cream);border:2px dashed var(--line);border-radius:20px;
+    padding:1.6rem;margin-bottom:2.6rem;
+  }
+  .finder-row{display:flex;gap:1.2rem;flex-wrap:wrap;margin-bottom:1.3rem;}
+  .finder-field{display:flex;flex-direction:column;gap:.35rem;}
+  .finder-field.grow{flex:1;min-width:220px;}
+  .finder-field label{font-weight:700;font-size:.85rem;color:var(--teal-dark);}
+  .finder-field small{font-size:.75rem;color:#7b8a87;}
+  .finder-field input[type="search"]{
+    padding:.7rem 1rem;border-radius:12px;border:1.5px solid var(--line);
+    font-family:inherit;font-size:1rem;background:var(--paper);color:var(--ink);width:100%;
+  }
+  .age-control{display:flex;align-items:center;gap:.4rem;}
+  .age-control input{
+    width:74px;text-align:center;padding:.7rem .4rem;border-radius:12px;
+    border:1.5px solid var(--line);font-family:'Baloo 2';font-size:1.15rem;font-weight:700;
+    background:var(--paper);color:var(--teal-dark);
+  }
+  .age-control input::-webkit-outer-spin-button,
+  .age-control input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0;}
+  .age-control input[type=number]{-moz-appearance:textfield;}
+  .age-btn{
+    width:40px;height:40px;border-radius:50%;border:none;background:var(--teal);color:#fff;
+    font-size:1.3rem;font-weight:700;cursor:pointer;line-height:1;
+    transition:transform .15s ease,background .15s ease;
+  }
+  .age-btn:hover{background:var(--coral);transform:scale(1.12);}
+  .age-btn:active{transform:scale(.94);}
+  .finder-status{
+    display:flex;justify-content:space-between;align-items:center;gap:1rem;
+    flex-wrap:wrap;margin-top:1.2rem;font-size:.9rem;font-weight:600;color:var(--teal-dark);
+  }
+  .reset-btn{
+    background:none;border:none;color:var(--coral-dark);font-weight:700;
+    cursor:pointer;font-family:inherit;font-size:.88rem;text-decoration:underline;
+  }
+  .course-card.hide,.course-group.hide{display:none;}
+  .no-results{
+    text-align:center;padding:3rem 1.5rem;background:var(--cream);
+    border-radius:20px;border:2px dashed var(--line);
+  }
+  .no-results-emoji{font-size:2.8rem;margin-bottom:.6rem;animation:bobble 2s ease-in-out infinite;}
+  .no-results h4{font-size:1.25rem;color:var(--teal-dark);margin-bottom:.4rem;}
+  .no-results p{color:#5b6b68;margin-bottom:1.4rem;}
+
+  /* ---------- Floating actions ---------- */
+  .scroll-progress{
+    position:fixed;top:0;left:0;height:4px;width:0%;z-index:300;
+    background:linear-gradient(90deg,var(--coral),var(--mango));
+    transition:width .1s linear;
+  }
+  .float-actions{
+    position:fixed;right:1.1rem;bottom:1.1rem;z-index:150;
+    display:flex;flex-direction:column;gap:.6rem;
+  }
+  .float-btn{
+    width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-size:1.5rem;text-decoration:none;border:none;cursor:pointer;
+    box-shadow:0 6px 18px rgba(0,0,0,.25);transition:transform .2s ease;
+  }
+  .float-btn:hover{transform:scale(1.12) rotate(-6deg);}
+  .float-call{background:var(--coral);color:#fff;animation:bobble 2.6s ease-in-out infinite;}
+  .float-wa{background:#25D366;color:#fff;}
+  .float-top{background:var(--teal-dark);color:#fff;font-size:1.2rem;opacity:0;pointer-events:none;transition:opacity .25s ease,transform .2s ease;}
+  .float-top.show{opacity:1;pointer-events:auto;}
+  @media (max-width:520px){
+    .float-btn{width:48px;height:48px;font-size:1.3rem;}
+  }
+  .course-group{margin-bottom:3.2rem;}
+  .group-head{display:flex;align-items:center;gap:.8rem;margin-bottom:1.4rem;}
+  .group-tag{
+    width:44px;height:44px;border-radius:14px;display:flex;align-items:center;justify-content:center;
+    font-size:1.35rem;flex:none;color:#fff;
+    transition:transform .25s ease;
+  }
+  .course-group:hover .group-tag{transform:rotate(-8deg) scale(1.08);}
+  .group-head h3{font-size:1.3rem;color:var(--teal-dark);}
+  .group-head span{color:#6b7a77;font-size:.9rem;}
+
+  .course-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.4rem;}
+  .course-card{
+    background:var(--cream);border-radius:16px;border:1px solid var(--line);
+    padding:1.4rem;transition:transform .18s ease, box-shadow .18s ease;
+    cursor:pointer;
+  }
+  .course-card{position:relative;}
+  .course-card:hover{transform:translateY(-7px) rotate(-1.2deg);box-shadow:0 18px 34px rgba(31,78,69,.15);}
+  .course-card:hover .card-emoji{animation:wiggle .5s ease-in-out;}
+  .card-emoji{
+    position:absolute;top:1rem;right:1.1rem;font-size:1.6rem;line-height:1;
+    display:inline-block;
+  }
+  .course-card h4{padding-right:2.2rem;}
+  .course-card .view-link{transition:transform .2s ease;}
+  .course-card:hover .view-link{transform:translateX(5px);}
+  .course-card:focus-visible{outline:3px solid var(--mango);outline-offset:2px;}
+  .course-card .view-link{
+    display:block;margin-top:.7rem;font-size:.85rem;font-weight:700;
+  }
+
+  /* ---------- Course modal ---------- */
+  .modal-overlay{
+    position:fixed;inset:0;background:rgba(15,30,27,.55);
+    display:none;align-items:center;justify-content:center;
+    padding:1.2rem;z-index:200;
+  }
+  .modal-overlay.open{display:flex;}
+  .modal-card{
+    background:var(--paper);border-radius:22px;max-width:520px;width:100%;
+    max-height:85vh;overflow-y:auto;padding:2.2rem;position:relative;
+    box-shadow:0 30px 60px rgba(0,0,0,.3);
+    animation:popIn .32s cubic-bezier(.34,1.56,.64,1) both;
+  }
+  .modal-emoji{font-size:2.6rem;line-height:1;display:block;margin-bottom:.5rem;animation:bobble 2.2s ease-in-out infinite;}
+  .modal-close{
+    position:absolute;top:1rem;right:1rem;background:var(--cream);border:1px solid var(--line);
+    width:36px;height:36px;border-radius:50%;font-size:1.1rem;cursor:pointer;color:var(--ink);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .modal-tag{
+    display:inline-block;font-size:.75rem;font-weight:800;letter-spacing:.03em;text-transform:uppercase;
+    padding:.3rem .7rem;border-radius:999px;color:#fff;margin-bottom:1rem;
+  }
+  .modal-card h3{font-size:1.5rem;color:var(--teal-dark);margin-bottom:.4rem;}
+  .modal-meta{color:#5b6b68;font-size:.95rem;margin-bottom:1.4rem;}
+  .modal-benefits-title{font-weight:700;color:var(--ink);font-size:.9rem;text-transform:uppercase;letter-spacing:.03em;margin-bottom:.8rem;}
+  .modal-benefits{list-style:none;display:flex;flex-direction:column;gap:.7rem;margin-bottom:1.6rem;}
+  .modal-benefits li{display:flex;gap:.6rem;font-size:.98rem;color:#3f4d4a;}
+  .modal-benefits li::before{content:"✓";color:var(--coral-dark);font-weight:800;flex:none;}
+  .modal-card .btn{width:100%;justify-content:center;}
+  .course-tag{
+    display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.03em;text-transform:uppercase;
+    padding:.25rem .6rem;border-radius:999px;color:#fff;margin-bottom:.8rem;
+  }
+  .course-card h4{font-size:1.12rem;color:var(--ink);margin-bottom:.4rem;}
+  .course-card .meta{font-size:.88rem;color:#5b6b68;}
+
+  .teens-note{
+    margin-top:1rem;background:#F4EEFB;border:1px dashed var(--plum);border-radius:14px;
+    padding:1.1rem 1.3rem;font-size:.92rem;color:#4a3f66;
+  }
+  .teens-note strong{color:var(--plum);}
+
+  /* ---------- CTA ---------- */
+  .cta{
+    background:linear-gradient(135deg,var(--coral),var(--coral-dark));
+    color:#fff;text-align:center;
+  }
+  .cta h2{color:#fff;font-size:clamp(1.8rem,3.5vw,2.5rem);}
+  .cta p{font-size:1.15rem;max-width:560px;margin:1.1rem auto 2.2rem;color:#FFE8E3;}
+  .cta .btn-solid{background:#fff;color:var(--coral-dark);box-shadow:0 6px 0 rgba(0,0,0,.15);}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--teal-dark);color:#BFD6D0;padding:3.5rem 0 1.6rem;}
+  .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem;}
+  @media (max-width:700px){.footer-grid{grid-template-columns:1fr;}}
+  .footer-grid h4{color:#fff;font-size:1.1rem;margin-bottom:.9rem;}
+  .footer-grid p, .footer-grid a{font-size:.92rem;color:#BFD6D0;text-decoration:none;line-height:1.9;}
+  .footer-grid a:hover{color:var(--mango);}
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,.12);padding-top:1.4rem;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem;
+    font-size:.85rem;color:#8CA9A2;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow-bar">Founded &amp; taught by <strong>Preethi Prathap</strong> · Chitlapakkam, Chennai</div>
+  <div class="container">
+    <nav>
+      <a href="#top" class="logo"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABgCAYAAADrc9dCAAAKHmlDQ1BJQ0MgUHJvZmlsZQAAeJy1Vnk8lGsbft73nX2xzZDd2LdGljDIvpPITpsxMxjLYMyg0iapcCJJthI5FTp0WpDTIi3ajtKmos7IEarT0SKVyvcOf+j7fefP812/3/O813v97vt+7ud+/3gvAMhjAAWMrhSBSBjs7caIjIpm4B8DBKgBRaAHtNicjDTwv4Dm6ceHc2/3mNLd+JPjs9Z3YS3Zbl/+vLHVjvoPuT9CjsvL4KDlPFC+NhY9HOVdKKfHhga7o/w+AAQKN4XLBYAoQfUd8bMxpARpTPwPMcniFD6q50j1FB47A+UlKNeLTUoTofyUVBfO5V6b5T/kingctB5pENUpmWIeehZJOpftWSJpLll6fzonTSjleSi35SSw0RjyWZQvnOt/FloZ0gH6errbWNjZ2DAtmRaM2GQ2J4mRwWEnS6v+25B+qzmmdxAAWbS3ttscsTBzTsNINywgAVlABypAE+gCI8AElsAWOAAX4An8QCAIBVFgNeCABJAChCAL5IAtIB8UghKwF1SBWtAAGkELOAHawVlwEVwFN8Ed8AAMAAkYAa/ABPgIpiEIwkNUiAapQFqQPmQKWUIsyAnyhJZCwVAUFAPFQwJIDOVAW6FCqBSqguqgRuhX6Ax0EboO9UGPoSFoHHoHfYERmALTYQ3YAF4Es2BX2B8OhVfB8XA6vA7Og3fBFXA9fAxugy/CN+EHsAR+BU8iACEjSog2wkRYiDsSiEQjcYgQ2YgUIOVIPdKCdCI9yD1EgrxGPmNwGBqGgWFiHDA+mDAMB5OO2YgpwlRhjmLaMJcx9zBDmAnMdywVq441xdpjfbGR2HhsFjYfW449jD2NvYJ9gB3BfsThcEo4Q5wtzgcXhUvErccV4fbjWnFduD7cMG4Sj8er4E3xjvhAPBsvwufjK/HH8Bfwd/Ej+E8EMkGLYEnwIkQTBIRcQjmhiXCecJcwSpgmyhH1ifbEQCKXuJZYTGwgdhJvE0eI0yR5kiHJkRRKSiRtIVWQWkhXSIOk92QyWYdsR15O5pM3kyvIx8nXyEPkzxQFignFnbKSIqbsohyhdFEeU95TqVQDqgs1miqi7qI2Ui9Rn1E/ydBkzGR8Zbgym2SqZdpk7sq8kSXK6su6yq6WXSdbLntS9rbsazminIGcuxxbbqNctdwZuX65SXmavIV8oHyKfJF8k/x1+TEFvIKBgqcCVyFP4ZDCJYVhGkLTpbnTOLSttAbaFdoIHUc3pPvSE+mF9F/ovfQJRQXFxYrhitmK1YrnFCVKiJKBkq9SslKx0gmlh0pfFmgscF3AW7BzQcuCuwumlNWUXZR5ygXKrcoPlL+oMFQ8VZJUdqu0qzxVxaiaqC5XzVI9oHpF9bUaXc1BjaNWoHZC7Yk6rG6iHqy+Xv2Q+i31SQ1NDW+NNI1KjUsarzWVNF00EzXLNM9rjmvRtJy0+FplWhe0XjIUGa6MZEYF4zJjQltd20dbrF2n3as9rWOoE6aTq9Oq81SXpMvSjdMt0+3WndDT0gvQy9Fr1nuiT9Rn6Sfo79Pv0Z8yMDSIMNhu0G4wZqhs6Gu4zrDZcNCIauRslG5Ub3TfGGfMMk4y3m98xwQ2sTZJMKk2uW0Km9qY8k33m/YtxC60WyhYWL+wn0lhujIzmc3MITMls6VmuWbtZm8W6S2KXrR7Uc+i7+bW5snmDeYDFgoWfha5Fp0W7yxNLDmW1Zb3rahWXlabrDqs3i42XcxbfGDxI2uadYD1dutu6282tjZCmxabcVs92xjbGtt+Fp0VxCpiXbPD2rnZbbI7a/fZ3sZeZH/C/m8HpkOSQ5PD2BLDJbwlDUuGHXUc2Y51jhInhlOM00EnibO2M9u53vm5i64L1+Wwy6irsWui6zHXN27mbkK3025T7vbuG9y7PBAPb48Cj15PBc8wzyrPZ146XvFezV4T3tbe6727fLA+/j67ffp9NXw5vo2+E362fhv8LvtT/EP8q/yfLzVZKlzaGQAH+AXsCRhcpr9MsKw9EAT6Bu4JfBpkGJQe9Nty3PKg5dXLXwRbBOcE94TQQtaENIV8DHULLQ4dCDMKE4d1h8uGrwxvDJ+K8IgojZBELorcEHkzSjWKH9URjY8Ojz4cPbnCc8XeFSMrrVfmr3y4ynBV9qrrq1VXJ68+t0Z2DXvNyRhsTERMU8xXdiC7nj0Z6xtbEzvBcefs47ziunDLuOM8R14pbzTOMa40bizeMX5P/HiCc0J5wmu+O7+K/zbRJ7E2cSopMOlI0kxyRHJrCiElJuWMQEGQJLicqpmandqXZpqWnyZJt0/fmz4h9BcezoAyVmV0iOjoD+aW2Ei8TTyU6ZRZnfkpKzzrZLZ8tiD71lqTtTvXjq7zWvfzesx6zvruHO2cLTlDG1w31G2ENsZu7N6kuylv08hm781Ht5C2JG35Pdc8tzT3w9aIrZ15Gnmb84a3eW9rzpfJF+b3b3fYXrsDs4O/o3en1c7Knd8LuAU3Cs0Lywu/FnGKbvxk8VPFTzO74nb1FtsUHyjBlQhKHu523n20VL50XenwnoA9bWWMsoKyD3vX7L1evri8dh9pn3ifpGJpRUelXmVJ5deqhKoH1W7VrTXqNTtrpvZz99894HKgpVajtrD2y0H+wUd13nVt9Qb15YdwhzIPvWgIb+j5mfVz42HVw4WHvx0RHJEcDT56udG2sbFJvam4GW4WN48fW3nszi8ev3S0MFvqWpVaC4+D4+LjL3+N+fXhCf8T3SdZJ1tO6Z+qOU07XdAGta1tm2hPaJd0RHX0nfE7093p0Hn6N7PfjpzVPlt9TvFc8XnS+bzzMxfWXZjsSut6fTH+4nD3mu6BS5GX7l9efrn3iv+Va1e9rl7qce25cM3x2tnr9tfP3GDdaL9pc7PtlvWt079b/36616a37bbt7Y47dnc6+5b0nb/rfPfiPY97V+/73r/5YNmDvodhDx/1r+yXPOI+Gnuc/Pjtk8wn0wObB7GDBU/lnpY/U39W/4fxH60SG8m5IY+hW89Dng8Mc4Zf/Znx59eRvBfUF+WjWqONY5ZjZ8e9xu+8XPFy5FXaq+nX+X/J/1XzxujNqb9d/r41ETkx8lb4duZd0XuV90c+LP7QPRk0+exjysfpqYJPKp+OfmZ97vkS8WV0Ousr/mvFN+Nvnd/9vw/OpMzM/OBNzFBbwpj3JR68OLY4WcSQGhb31ORUsZARksbm8BhMhtTE/N98SmwlAO3bAFB+Mq+hCJp7zPm2WUDgnwHP5yFK6LJCpYZ5LbUeANYkqpdk8ONnNffgUMYPc2AG8+J4Qp4AvWo4n5fFF8Sj9xdw+SJ+qoDBFzD+a0z/yuV/wHyf855ZxMsWzfaZmrZWyI9PEDF8BSKeUMCWdsROnv06QmmPGalCEV+cspBhaW5uB0BGnJXlbCmIgnpn7B8zM+8NAMCXAfCteGZmum5m5hs6C2QAgC7xfwAKP9n2U7+jGwAANqJJREFUeNrtfXmUVdWx/le197lDj8yDKIoyiDiAqKCi0CqgKINIX5VoTBxjjHnG5GXQxEtrEpNoYmKM7znExFn7OoCCQUUBFZwYZRYEUZlper7DOXtX/f64jRIzaV4c8otnrbNY9F3c5uw6VV/VV9+uDfyDK50GAwDBYmnjn/rd8dw3x9w/P32Sqib3/PyL619z0d/7UFWJyOifFvzm8IVvP3l1GLQMacm39kiYEpeQ9gsG9Tz5u2OHfvPF6tpqk0ll/BfL+QkapLq62mQyGf/onJojV2yZM6M5sbJzQ9gMcFLVC8ptCZUW9m04csD4c8cP/N70tKa5hmrkiyX9JAyixZ8rFL+cdtZDO/28VJNuCSOKWS8JIiJYKvjAkW1n+7cM3H/MuZMG1Uyt1mqToY/sKQTVPf5G+oU58Nfjv7YtF4ASZ32/1tCrMizIMdiRsiM1sCF7qdPVZYvXznpg+gv3nJyhjE+nh9t/9EtVlYpmp/fv6lo1IPrCIP/g84i8aQQTIkCVk1DPsBLCuhAGYK8iO3lN8sW62+5+YumvDq+pmetqa6vN37EGEZEGTEg/+2rfqx976QBVtZkUeahSOp3mLwzy4VhC0OpqGCYbGqdzSmJJUjEKKAwrjAYgsSA1IDIcUV4a8GaXhRumTn1uzc2HpVIZX10L89eMASK8pVo5/qHX771vfbSmdru+OSqzZOals1ZMiFvSmpoaqa6tNV8Y5EPXQbVpVXgMG3zaH+NRty1xSViWnAdF8IjBoQRCDIUiJjG2Bfgd4Zp9nnmj9qnMwp+fmEnBV9dWG9X3cYrawhW+k5l/+0uF8nPeCvbStaXdaJYvP3HaZjx+wh+XPPHgsm0HZFIpn1blLwyyx1VDNZLWNA/d78sb+nY//jvtaB9QgdmA1bPAGcC1LTWrA6TVRCaUOrtmr/kbM9MeeP2aszOpjE9lir+julYZRHrBjLWXLs12SDWE7GIUJ/alpFG531booEtc97E3L9r6dM3LK4bUEAnSafuFQT5klOpamHOO+9kD+1ZUfa9T0IfIk0JFlUIo+yL2UwTEQhAK7DQrTVhfuuidmX98cMFPJmdS8OnZw21mxRRVVV6xNTx3G3UQT0QeeahEMCBDhrBDnFtJZQfUvtny1BXz1p2AmhqHWv2PCl//OK1REKaAUGPk1me+/O2NLa/dWOc2qloDJkfkIxgiCASkgFAMjoywD7gjeuWH7X/qV8cOrnkIAKlq7MC7lr+yJt55oPGt3hMbEAOiAAxIBATxYDV9bcuuM3vHT68Z0u+F4enZdm5Nlfsiy9pdLUyBDk97+/VRd/+yV4ch327H+5MJAyBUtVysV1QDAAFIGdYzMyJpkbWJ+Wum3fPIa1efCZACU6JEidsR2IKqj8BiAGLAEBgORg0UCSOa8BuiZIfHVtVNTc9ddszcmir3nwL0Hwk4iaBza+CQFv7aiD/+qndF1bc68n4U11JA4qqeYTSAaBICAsMjABgUSVOwLnj9nZl3PbTw+rOIauSE3u1+vW+hnhJqKR4aBCHBFkIEXkFqoWRhlIw6I2u5U/un385nbnlpzcBMKuWHp2fbLwyyZ/SaAh0+XOzXRv3m13vHh3yzDPtAXAxAmaqaYkmpxTUT5KFGuEAidX59yZK3Hrnnvhd/OPmmI3s9NThZuKmdVS4YjkidggmhUTibBbgFAsBxBeclIW+g8173v9X82L2r3uv3n+Ap/1RpnE6Da2pIbpt12TdW7Xrx5mZaTxZGASVSgrCDcAECAVMc1ieFIsPtEj1zB/c45dzzhl7/6Kjalx98Jd/xrPow4ZnICIVQdrBCEA0gxLBk4OB9KbeaAaZp1eQD242/4vDea6tr1WRS9JEoGoVSpjbDnVesoDmA1NR8vvm2f46rUNDwKTBza8j97qWvfW3t9rm/a/XvklUC2JMjhbAB4MEesBKDVxZY5TI5yB/Ua9TZXzvy2syoqQvuX9DYafLOfOCMcUYNEZxCYw4CD+OS8JyDWvUByAwKolUX9usw4eKBXd5Eba1BKvV3jZJGmmvw5wZIAzylSGPrv33I2hPo59bApVX5smH/+78Htj/psgruqV5AAlUVj5iLIVYoRSABQAWQDdkpST2v4RUbHv/jQwuuGjtr4pFfGprc9vt9YlnLXgWO4a0pFvTeQEgBDkEITaQxtzjfsf+dS3c99bPnNg5AKuWHz/7bmLLbGKpa8tzPpk+c9u17Ltg0c/WBNQQhIv28UjT/NzbvfU+Bu3P2ty5as+O5W5uwwYhRqAqxxmBVoRTBs4eSAXxMDCwnzD7h/l3HnfnNY2umnpVZ+suXc+VXbmRyrN6oY4IpgQqBkQVRAYoY1Cclzp4PC7asu2BguwkXD+iz4q95iqoSWdJnv3HHiG1z193SuqswIAaDIK5N8d5d7j/pqe9d1Z6o4a950L+nh3zIU6prq82FVTfd0bfzCZeWcy/x4lUtqTd5eHYALEgZhAICdawaSTPWBu/UT7337kXpMbXVh337iGTd9T21yarkFIahUkwNjE/A+CSUBBpkucDerfRlve9ZuGXG7xetOQyplK/eo3hMI81EpI9fetdx6596c1rJKj+g/VbWxDYob6SK/Gu7Lp1+ZHrWe7e+1K8GNVJb/flKEv41fLeC0nNgaqrgfj3r/Ks25xb8ZGd+vZDxxFBib0BEUAgCZ0AWyHFWiMDtosMbBve79MSzDjt/0VceffV7LxQqf7YhH3dk40bUkXUxsBKiIAcN8iCNQ/PGV1BkBsablj8weeCIvYnqUKsGKZKig6i5Z+QNz9j5zSeUFcjBRLYVAm/iyqreUNbioMTaoV8fPWG/C45fWVtda1KZlP/ceYim0zx7+HCr1dWmrWfxkT3l2ipy1bUw/3Xi76/fJznkik60n7cuSVCjYh0EBJIkBDFE3oEB5iguebux3cq19zz+0LxbD/7jGUN+PsRkf9w7IKsuFJCoNx4KgfUByMWg3gNBwjRpO78k6nzwWQ+98dQvXn7rUKTIp2fPNgDwqwunVDa+W3cURV4NkYUYBCYAUUREbIG4cyua+7x0yzPTX/jJtENTmZT/vHhKW2cQTID85Ytf7Op9jIyE2m754+zvnLN656w7d+nbMWecGhImF4NYAuCLhSAU5AMJTAmXxw5Y37tb9TnnDbn85fOnLvvhC42J69ZRzLGIMT4gFQO2FhHnoQaAN7BOJR6E3N/Ub5p8YMcJVw7edwHSab4DA9pln1z4VsfVhcrKsAyRWvJBBEUWggDeWEDJixZMvH/5hv2+PHTcUVeMXl6LWpPCZ+sptNsYqso7f/GL4a1LVw0Oysvqw5OPfa7XpC+9DS9QgKitkfhRrt2ihztnX37uurr5v9/p1gYmxkoUUV4FjBjiTqGkIBDg1AexwCTt3g19ep5+5oWDap6Z/MiC9Cth+ykbs+I1lmRBnGzeg63AmRxAHiQWHnEXg7MH0c5tp++bPD094qCXVTW4e+y1D+mL2ydWFCp9AWTUOsDlECcLjzhELGJsfc41GBmQfPfgMwePPfwHZyz9rMMXEyBvpH9w6NIRVXM23fSbWcEzz94QPvr4nVu+/YNVa04de6suWFBJgNZWV39kl86kMn54eri9sOq39/bpePR5XYID8xQSvPcSgwXDIbQRHAOeFAjUFFyDNMvKdivefqL23mW/GPXApCNqhiXrr+5Z5o1o3hOFyoGDioPxgPG+yDJDbWRLZLl27Dr13dzU6+ctPZ6Iou4DDviN71QS5aQAmKwQBNaUQJUQRB5xBaIoMvGgRII1uX2WP7bosTfvfeWgVCblZw//7Gh/WnP99fvnaqc922PViv1Lo6xa8RoBBBMnCcrwzhH9Z0e//dFZAweO3p5Op/njVLq1tdUmlcr4u+Z8Z/LanXP+sNO9GUsY1gLlKQwEQZQo8lcoIBY4+Ii8mripjHo1HL7X+OqzjquZNW76vB8uaW133XutVogDUhhiLbq2Z4UQgZQBjvuYbzGHxHbsOjoeTfrtpGGzHz3jthv93HXf5uacI5RalQQEDkY8jCWEEAgBEPVqvcn3L1l/5NdPHXvwBUM/M6CnN8af/uO9Z867uiKqcwpvhQFlKmoZRFy2tCLYesihc/o8eO/p1KtXg6bTTB/DKMNnD7dzq+a6u17+/pmrdsz4Q0N+Q9ISCylYASgZeBDAAKnAOBY2hkvRs/6IbueemTruimcnPzL/uy9nK36+AZUeCoYaAkwxkKIAowoDhvNebADelxoah7eLxt494agXHzjp+md0/s6RnA+cY2sNYvBUgHIW7CLEOQkvMXgYaQ1a2QxIrjny8lHj+587bM3s4WlbNbfmU6X9uSwqDCpxraoqTAowCOIVDCVhCpK5Ftdl0YIRWy88/w+qmqSaGtGPUeXOrZrr0unh9vyjf/bwoR1PvaB90Dd06ljECcVChNwKtQJRhVUPQxE7KvhddmP7V7beVXvPiz8a+cCkY34xrEP+u3240cRcAUbQlgKGABw8CJF6UOA4FPEbfYfKl+tKp1ffPb9qUt/E2PzAynlRiVj2cEoRnDqwxsCcRKQKxw4hOzaIe7+isd/SX814cuMtzw2omlvjPu3si736XYIQZNrUWJ5h1IKpLf1isqVh3sXnvzph/chRD6juKKeaGvmomKLpNI8YAaTTiJ177M8ePLjb6PPam4Oz1jKHriBsAzhRMAFKCs8hCN54F0pzsLnd6m1PP1j7+o0j7z3tiBtOqMxe0dvkSCmnilANU1vHEtCA4eFh4Q08ZIMvq1jsS6ddPGnM4HN/fsLI/IDka740Z0VzLkGKQAEoQ2AgDBgWBF5NOUq9rGzp8+Ldzz++7I45/VOZlE8PH/6pYQotOX3SWV1emP1gp/o6zyCGGvLEMBKCDeCFYcjAifrGZGB2Hn/k1ANnzj2HiFr/Ufj688/bLAzgoXk/PGvZlul/qJd1iYgC8RQwkUApgkEB1gNGkgglLhwTLve9GgfsNT71lWFXPfOlaQuumJcvventfKDk4yACgS0EAlAIUkHgLbyStyY0fak1e2TMjft9ZflL99xwz0z7RmFEvNk5C7IeDM8WkQJxGMQVyGsEjcd8TlqNHFS2cb+vDJtQ9Y3RSz4tTCFVjS+qOvbBnq8sPL1D6JzAW4UFqQMI8MQAWRhx8CyuNZmwrYOOmr7P3LnnEFGjVlcbyvylWrFYvkBV3+r63uz7x9uotX/eawsq+j7Va9iFL9/3/HfGr2mad//OaE2pJxEPZjEhCEDMKeJq4YThoBIEwpXotWvgvhefXX3EZc+c8+SiS19uDG55yyVhfJyImIQAMQ6AgISgsCBAGTkawPXZIZ0w5vZTjnzpwXE3PhW+sm1Uop59gokL7AgmDo4sAicgq2glwIJ8SDmjA0o39Dv32HFHXTF6eXp42tZ8wphSLAw3v9l5ZfWF07u/vvCoyrDVqzVGVECqAAMiBEaxcjRQ3xIkTHbosBnd5zw7mYiaPuwp2iaGe+/lG8dhx8pfVlJj75i0gEnQim5NTYlev+o56tqae+d/5/QVm2Y92IDVcc8qQpYBBgkhJgojArGA00gsMZfK/s2H9Jh89rnH/nDGuY+/9vXXGuzv3tEKOIqJAKwECAsAgvEG5AXOhD4Z5M1+kisclAwnPTV5+PTbxt/8gJ+/+eyS7XmhwJD3RMbGoM4jgMIZQB0jTsbnTaPx/RLv9Dlz6ISjfjBh8SdtFNZ0mmmvvju6X3xB9bZDBy5qTpQaI+qL1SABHghIAVUEILCSKSvkXXzBi6cuO+m4jC5f3mFPoFdVJiLdsap2MO1YfF+36M3evGu9l9wup03rXbx1cUUnv2rKxqe/efu5x9z0+MC9qyZ2ivVrNqpsSYU8oMwIDSE0AiEPVsMiKq1mQ/nyTQ/fd/eCn5527+lH3XpCRzq/DzdHVlqYSIWEAI2DHMNCYI0HGzY5F+hb0jm+uqXzo2c+tnj0Vx77+uTE8L1uau6qDDEEYvU+BzIeISnUewQWcIhMzCW8WV3oufqRxY8v/MWsQ2vm1rhaVJtP1ENqAZMCvC5cuNear13+aNeli4e283nvlAwIMCpQAQgGCoXEFAWnvpAsNTuPHPps36mPnkXt2u3SdJrnYA5X1cx1a6dd+b+9sPwSbX4v8r40gIlDbDNAoThRMaX72Toz4Laep/7ya48s+O8JC95+9v4GXV9CHEgkjr0RgBRxD5AWGRmFCEzIZb5f9sC9Jn7pwmNrpv7ghTVnPbOh6eaVvqxznsoFXMJGPSBZiHEQMoAGMJ4k6Tz1TmSjoypzZ99++sDHnvjKbV+vn/nWb+MNDOMiYhB5tmBleI1AlhE5RixI+ILPGT4wuanHqL6p4b84e/4nhSkMACnA11ZXGxo8ePPe3//RxHcOO+SNVmMNqXGKGEIhsDHF+GwJzhOSZE1FtuD2euXVkRsnjLtfVZNTamowYuVcBVmUuew+RvLqDMgbBcCIkEBEcTYSmJKWet+j8PYlm5665peTjrhh6pBek85qR/2aNPQcByQQAinBawCHOEI2cKRMYqSF15Ss3j7t3rsW3DT6+uP7PfS1wV1P60sNdWwLrORFROANQ4wFKAbjDZgKnAsK+la+NDa/PnrwW9NfHjPurkturRjf9/J8pWcgELDRROQBBRwJPHmACZGHsRIIr2rusfGJRX969ur7h31ShOT79UQqk/G11dWm7IxTtpScfdbkzf0HrC8ESeuUJTQBClLknsQLAiYoGRDBluVbXLvFi09ee8qYm64tKZFMBlCJSIRaIQYxEQTsUOAcAgnBHghMGYV5sLRulZLsyiu3zp5y0emDf/jkMXuPOa+L7dVqIsNxF5eEUzijCA1BwQAZiCpbivlW/27Zio3331278BdHX3Rwz9dG9ORL+9IOx9LAyk6Kei8DeIDg4dnBW8+tMZJ3ws6xWVvNIxdNnXfW6f9z4a088sAbGjob471IZL0SA9bG4SOPBAGsITwJGxO4xLuuYsfMlb/WHVpenUnJx2LFPy79nspkvKbT3OfKK1d0ueTikfWD+87OlyhbMd5wDJ6ouI3DezgfogiixsaaWn3FK69esvSE4bdWt/WrtWOvuU3JCoqEyTiLuIvBQBAHQSIHKjGU5zyx36CmYfnvts2t+ca4oTVTj+g9emJlvE+DoMBKTgwcrDgYETAIIAvn2MCzhNjS9fUND0y986Xvf+k3Jw7JHNdFJh+EpmxMQlbnlb3AIA9vCxDEAUmCbMTZWELWus7JFxvL7vnqtMWpL993wXdLj9/3xlxHNQWFOoa6SJGkUlgfAdQKiuURRQUb16RzbxcGT730lguIoFNoCv3LMeQvOKjdmKJa/s6IoZl2r64anSzkvbI3BA8WgKm438YDICYVFd9QWWkbjzzm9j5PP3U5ANnwzGV/6pZbc5JtaPKBSZiQm6AKqDGIKAIzIM4omxIU7D5UKOt/y16jr7v80eXfOvnVtU8/Ui9vl7KoEIM9BNC2ziMTEBGIrBRiOe7s+qFv+YhvXnjyjb/9xhMLz3xxV/yPa6VdwkFEKM/OMqClgASAaQHgYSUh8UipKzfo0DJ3ce1ZA3//2OTbfrLzubVXxRrYxTVprDjy2gzECN4LAi5BFELzSYN8P7vm4tdrDvpXiyX+KgWSArxWVxsiau75u8zk7YMOnpVNsPHqnSeCEgNqACUwFKxClmDbNzb5ri/Pv3hd1QnTN953X+eSimHnNFDfJVpZYfJBk4M4qCFEXKzME14Q1wRRaFCW26TdWhZ9Y+vMK/94xsG/nnn4fpPGdo0P3OUlzgXkRYMQSgzSOEgIsHlEQTN7ItmOtbohO+vm/5l10XdvGTf44aruJtXPtDbBg6FJYYkDEoEoBHwAwEPQyBGJviddaV625M4Jjy69Ytz9l1zdbnTPKb4TWx/l1FOoUUIBH6DEl0GdwltCXCxte29b95tvvjn2qbZw9+iVtHvr2GNquyxeODKZDz1RYEgETB55AwgREk4BNRCwby1JmJ2H93/N/Pbno7t0CEqalzw8o8y9MVBdo8SFWBXwBHiJISCCgYNC1EG9lO1jG+L97tl79K/Om7roxyctevvRx+p1VXlOxIMCQ4gBiECUh5JCYUASU42Mdgj25R5lg677r5Pvuubyp5eMfW4HPbhSKkrJWwng2BFDqBSszTCIoJKAwqonp3vZiI8P3HWPntP/mke/9Nur62dt/HGizriCjTjwMY4Lw4vAm8B7ONp+YG7b/MVD98nQB5nWbjz5v3gN/wNrSW3RUxoOuPmnk7cedtjzzfGEMSKOCBBQsVTUIgXhLAAjpiSbc+0XrTgqe/n355Q8+pqW9z3x1GZz6OtsOrF4OOMN4lEcRhUhtyA0WXgSEpD12S2+U279l3fO+NZ9EwZfM+vYfU88rSsOqYtpqQGRF85ByYHUgMUgEAaJEluierdR383P/9FPpp/+y9+OHvjkUd3C0/vZbD3BMQwkUAdIBOMTUEnCG4G3johitDkskddd6Y/OvG95etzdl/2k4vgDr27qSJZBTE5DIkSsGiGKjK1k3veQ/W7OmJRPo1h/pdNFccX/NYR9JEDaXYmravu3jjvu4Y4LF40szeW84cBEWixa2Ro4jcBKsBSD8+I1TmbTwEMWH3D5lSfiuMOobsn/PFHh1h8rzTt8DMa4wKNg81B1iPkERAOASa33nkt62K0lfR/sOeY3kx+b/52qhe+9+PgWrKpUznqralgMoBYKCyEBwQPw6thLhe1qupvBd1512mMXXfLMstHP11FmXS5ebpUkMsyiyaJA3IQAKSiyIGNUtCD7xvLmeJu77L4zD7/1gbN+d2Xj6+uu7dBSWupb8/DlBq4y2FnereLuic//93eJSBUK6BQiqhFVjQEIAMoSQT8xgwBAbXW1SWUyXle+2nHt5d9/uMv8V08sz4cOEMtEiERgmKAqABMIBBVxhXiJfXfQYSuii844JTime65yzQvTOtL6Y3It2xxzmbUSwSKEFw/YJEgc1DuoiXlNdjUNJQfW9hxzy5lPrv750S+tfuSJnYXVnQyyXhVGtBSCGIhyYHKQNnWx89AuQQ/uIgPu/+6kR8+5cNYbI+dvwmPrXVlZyKqRZQIs2CksClA4eBuHMISc0z6s0ej2POa3p/WZ/ewvHjt69SOvDfGtYUm+XOtO+/EFLx580sErP2jC1ZpUKuUbt6/rs3zlijtKS0pfHHjUST/6uM28f0oGtIentFtdNfzhbq++MqoiF3olMmoILARSD+XiN6u38FriWxIwdYP2W1b2ox+emDw6iLKvPj2tQ27D8dpa562yIfXwgUfBACYCYmQg4pVYfVjW2TaWHfJIj6pfpZ58/RfHv/7u41N3yep2ISIPihkBg6kAUg9IHAYBSBVqECW4MuhoD3uoZvzjZ5/3yMuT5jcmHnyT2rE3ChAxe4KNCvBxhiMGeUbcqZBN8BH83pIXRu4aRt1Ht74f3GV3FlptqrVWkMkwpVJ+84p5x2/asuGOmKW+jc251ceddsHhRJT7ZzzkY1WaNXPnam11tTk4lcrdMveFGe+8/vLhVLezdyyMHCxzBF9UhAhQVEgxiGKccKGL7dzefdu61WOF2z1aPnTYH8Pt2aEV1LQ/SZNzTOyJAREAZTBEMJolGGaJWnxMooN3bVw6cOgJ1//8mp9eMWfLjh3jcmgoFxN5gywb2s3wF/GMAXgKTY4bvTeth45OndjvpolXXnfyhRe+k8vr6U1hUGSxg4BE4lCNQcEgYrDESVyoBq77jmDvV7/RdMy6bj27xZJrkzR68Giz4OIFOHhuSkaMgO112jf82kXPjm/Ytv5B5Br2dtlml4yZDq31m5fcfMdDq1RrTU1NRv9loP5XU+K24pH23be+7+x51TuPOHxGS0XchlrcEKVabK0SLIgNSFtAcLYsUt9z4fIDs3c9MSOYESU6HHPVuFbT93mNd7KR8R6kKPFxGGU49fDMcKoIfJwTrbtcZcvK8e8+9fVpVb2uWHjiIadO7KwH1Mc9TAzsA1fsq4fWIwpCRDaCcgRDkWkJN0cNWHH2tU+k7n1g3BF3H11RuKxXvIGYvaq3HpwA1IDEQMGIjADGay6olFXbwjGpTMq/MWSin4u57vaFt0dUQzI7nbZVVTVu3evTz27evv5hn2/oAJ8TixAxKths065xqspTpqzQf2mW9TfjXBu7S0SN/Z5/afLWQYOfzJckDULjrBTpcwDwEoKCIiekCpMsiO/1xpsHbbz7hhdfv/OWzqXH1UzYFTtoFie7GnLi2BsEmoPAo0AJEAcgjROcWM5v9pWFleO2PvOdaVUHXPXKCQPHjuxuD9wqYYUhSTpSAyGCQuE5AhHAESPmbNAa1vlGeeOc65+ccNfdpx9+66Fd6i7vbeo4GYWGXc4rhwAULAo1BThmDdVxYJEHgC4DRry/sLfddltQVVPjVix5/szmhm2/51xTXEUFREwQLhQKiJw/dd3yF3rUfMx2t6rSP63t3cMoTf1nzzur+cjjHmmtTFpPzhMpoA5sgBAKCopgzxSYIMr5niuW9+7w2LQZq6c9VO7HXjWhngc8Eyvd32Y58iAHy23dLWegHEKtB1QMt9a59rk1Y7b96bszqg740fLDep89vjJ5SF0+nrAC9qX5GIxYKAiqioATgCZg1ZiGcGu0XVZ/9frHvvyHx08ZdctJnXz1wcHW9SWxrDE+r4TQA87BW6dkTAdqCIf2Lr8LAA5aUcyYamtrzSWXXBJtfHVOKtr69t0u25DMM4k3hgUMYWZRFfG+EwqF0Z+JtncPoE8uOmn479stWXD23k3ZyDhYsKFireIRKOAUMAyIqGuMWbt54IANiZNPGVWoHr2149szH6kMV4yO5bd6LwUjHAAaQG0BkBBWLRwCqCefKNnb1MUOeLbzaTeOm7nz9/u+vKD2wfrs6kHeFyRPrUwWYCEYMRDPIOvgWaBifQfax3SLH3LXt0974IIHNm7c64EFW25a34RJW21X9twOyUIePYJdDUf0DL5x+/C+94sqEQG1tSlOpTJ+9StPXZCt3/IbRPUl3jsFE5NSsSZTBgGSCMrI2dLnB5187kkK/cgiQ1X91wwX2Z3iqapdesrx93d5eUGqS2Peq7XGq7TJdNqkIlKUGamqzwaBeefQQ9bud/kVw8rOPbel4U8/uCPZunSyhu95YjakAbzmi2CLGBwYUIdA1Nnyve3WxP6zuo/+9ejt22d0+d/5v525XRYfFnGLE0+WxMKQApxvM0YCQBws3nWw3ew+pcNvuGzUbd8NAFy7dPPxz63Z+dWdzdThgNLgnQuHdb/llL0r17RNntDZs4uYsXrBMxc279p8hxR2AT5UAyIGQOrhKAZBDCyiAYEiLmnpf8jRw8r2P2RpW9NOPjWDfMhTKlZVHX9fjwVLxpbmsq4ANQZMVos0uO4e7WACeO9dIRHYzccMntt31rxTAeS3T79iWiXeOtW1vOPiIEsRQymJkBliIhB5sPeAkOey7qYxceB9XUbf+NVF7965358W3zX7XbdibyEj7IgN5aGchZCFSDlUDIhzakikzPWjYf3PHzfh0G/O2DPl9B+8ZYzi8xgi8htXvHTclnfe/JOEjSUBqaqP2JAFVMFwcGQhZGAEgDpJlHXkAicvH3zS2bfsNugniiF/FVOKvfSm/rNfmLjh6EF3bCtLWgMjpk31oDAgWIghZNXBcMwmcsZ3fGXZ8I0nHv3Yu5n/7dbltF9X12mf6Ymynjby8EZK2vqUjVAOQQ4gYniCkdZdrnPrinN2zLjs2cPLBu04sufpY7vxwC2BJpkBD2WQxEASFEV47MAUkaMc5YON/Mba6f+tqlRdW2uGp2dbX138U1UJNTUyO522ROQ3r3/1+G2bVj9stbnUaKgqni3HIGrglaHKIC0K/QAPIlX1BTBwiqraqqoa/1H7Jv9SvRERaRvQe1X9+qunVEHmLbxo7+YWF1k2KkpWBSRAzAQQ50EEU57NCy1cOOq9X7bO2bp6/WlH/uhXZ2x54r8e6VKBsdnG7U4DsqoWiQiwCFHQoodBxPrcDl9p/YhtC+56ctTI342p6Nr1xGdfuee5LbSsuycnpCUMMQA7CCJYXwLPRM62akPrpoMasa1XJpVar5pmohqZC4BqgDbPcO+sfGH4u2uXPWJ9UycJQwnIsHiCABAVGMtQKbaYixoxD1U1uUIrVGNVaxbO7w1g9ZQpUxgfAUv+5fvs2jwFROSG/Gn2JU3HD7l1a/syy07FAoi4yCEbV5TseCqAWLisKXI9l6ztXTrtmacWXnLePt3H/WbSdrvfE9Kus3XivRELC4aoA9ni7ipVh8gEJp9tdBWFdcftfPriZ4dG+289rOfIiZ2D/k2RNwyOiWoEYQdFAJJSqMYRsQBJBOu2rS/98DPs9owta1+p2rZpfa3x2U5SKIhRZfZUJDaJwIHAS6FNRqnvl/JFIBAJWJI+X38GAEyZ8tHW7xNR5O3eVNkmzLp8yclVRK8uurR9Y5PTGEzoleJs4eHhWREDQb215QV2+7+xYv8NhWjO8h99b9TB1/124o4nv/Fo5wSPR8tmFxkxjmIknsBaFPBFEBAHNmrY5TuVFYY2rb736XGjfnJiE7VOjN6lJ+vDNUljIi8SsagBOAKYPKHEQkrfHdz16DXFNazRtjhuiMi99cbskza9vabW5xvbs4TekjUsDFUDAkHgAQ1BRqE+XpzDBkVxrkUx7TYaoaVp+1hV/RmIZLdW7VP1kPdplqKnKBHJUS++9vV3jjvq5p0dyq16iGXAeQejjJgnsCu+VczeGg/fc+26vc0TTzw16wffPqDz2Fuqc3rAVMS7WK8QHwRgScBIAo4JgbbA+GbEyRjX2OrLWlcc+e7M771wTtfjlxzUeeTYvexB25La3sQlRqQtFJpGMjC2owwIj9h31LVEFKY1TSBobW21ISK/8s0Fo+p2vPeA5He1J3VCCiNCEJg9FJi+rWZQtM3Hw+61VjCYmFwhC6vhoZuXvzi0mPrW8qcesv4CU1Qpymb5yCeevWLzkKN+U19RboyzjjmppApWC1ULMFCgAhzEBD7y3deu26/H9Keff+267/VNTrzpjPrgoEdtSQ8D75z1qoECogUwWzAJ2AjYxIxrbXUdoy0D31s5/Ylzjrlq3rF9xh3bq2xEpsL3aepkDkA5HeA78yFvDu520sTJR/70keLwzimqqiaVyvgNK148Jbtuca3Nbu8MKXiryvAEoqJcVdhD2BX3Q6gBS4DihJ7i8B2A25IXQ6Tel1hJ7tj53ilEhEwq88kXhh+54CGCKSnRJSNG/LJy/utXdmluFtI8GzYgr4hIoJZhlKEiIIX3QYlZ2++Ad6Jjjzn58FtvXbv5qf96uKOsnyj1W3zcwHh4RCBYUwRWEQtDBMA5LetkdyX6Ttv75FsmiCpW1D08YPn61w61trJp4sCr5xJRC9Jg1EB2U+irV79wcsvb6x8oy+9qH/q8hMZwsediQEzwWgCTLxpADVgDqDKc8bAatU1DshCNgcTBIhQTWHYlnVbt0+PUIZ37d27erer8xOuQj2KUKUR0bSIpC6pG3NBpwcvf6dTY6K0oWwWREiJiWCluoFMCvMKTiZs1B+2zpWXMsJOPvuHuN7ZOv+LhDuGqFNVv9JZi3BoQkRhYYoTsEFcGFVpUrdWGkr6c7Df+pPIB5z7/4QynOB4EMnv2bFtVVeXeXDbztLotmx4w2ebypItEWbkABXMcThTEbRQ2RUVvEAvSOKAGniMYdUUpHxkIbFFr4EMoEaJYJSr22n9E/0EjX8CUKfS3BOr/0jrko4SvKaoq+RwdNWfOf28bcvTPd1R2MKJGQUYjEIg8RAUMgIQQAIYkK/uuWde94omXZsz/9vcP6Tr6hrMbsX/GlnQzol4AhYDg1QOah2gWJiCCqJYEqrs2rRsCQJcvT8dqtdrUto0drGnzjKqqKrdpxUvjm7dtut9EDeVAXlwgHJKAmKEawZAHQ8AKsFiQxIqta3JQDmG0WFYquFjvIIJqBLUBIgokERj4lh1nEZH+o3TrUx0vQUQKVfwwl+Mhzz7//S1HH319Q2l7hjPex4wqGZAt0u/Fql5gwBxE6rttfHvvyicys5Zd84NBnSfcmqqvOPjBsLKLCZz1SfUKihDZJPJBCSIygHoEEgFSHIk+YAckRRmfSmU8oJg9e7ZNpVJ+3ZLnJm56582HfK65QiInULDCQHbXcQTgzyIMfSjS61+mTaowbOC8h7EGhUIOhZbW8bktq/YrVo1p/lvr86nP+3jfUwoFOubZ566qO3rIT7Z26mgRQgtSHC5HBIhRKHFxZ5WBSWRD32Pdu10Sj0x/csVlFw1qP+qmL9XHDn0wKN/f+AKBERNoDBIZqFqoSaJJyyjRrdcSAMCIAe+v25QpU6iqqsq9+drMMxp3bLxbo8aEukgMGRYx8MJg+pgVQZudtO0W8bDWwIUhWwMfC9B9xcqlZxOgmcxK+kxB/e9hSk0iJktHjq5p//Liazo31HvWPBsScqrwICRYoZ7gKQ4P9ozQrDlw7zoaP+rkQ39214KdM35wW6xlzUWlup1yLisx9SCBoLSr3Rzvv7jnmBuP3aOdSrXV1ZzKZPySOY98O8zXXY+oKWDvixtUOICygajCtKW2H+1huM2L5H2oKn6hbWOBSWxgiUu7LepwwJnH9exJub8F7p/ZRJzdnpLOh3zYM0+ntw87Kt1Q2d5I8ZmKbXlLcK4oDlMtINDIGDjfd+3bHYPMzOmLrv7OkZ1Oue4SdBlQ3Vra4zWNdWKNtWcp62mzZX1f63rA0ZOJKKfpNKsq1dYWjbH8paeucWHjjZpvCNiHahUcMwFYDaAKQQShjy5sF9rTFG2VCHMx5DJAEBYXUSHbcljUtOCQT71S/1h1CoABhdAc8eS0axecemojv7Lo1122b3YwMIFT2h0HLAmEI8CTsSFLz41bu7715BOPNS2YPajiiKpHVfVPTYvvGr6zpfmQ8tLSdRWHj5lJ1CMLAHTttbJgr72C1CWZaPUrMy5rbdxRE+XqvVVhC0PquQjgUAAOzK741n9EyQH/xRCM3ZPUARUpym5FJG7V5hq3jgPwWiaT4b/mgp/5DEMqDouRNBEf8fTM3yw+cVRZ6yL8uNuObWrJq2GQULGfF2ixCaTMHITOd1+7fu8N1/3i26p6FRFlAfyp7f6zlkDtww+bI1KpaOPrz365btfGG6Ncs7AqQ4jAQdveO0aRMigmFPQxojkp2vgs+kDz+SGQJ4KyRMg27TyubR6i7Lnv8jMPWX8RvgCtLoRm0Kynf7J96BFXvdetC+WJxCvUQ2ACBosp7luDgzJRWUHUvrnmAkx/tLcqSNNpq5rm4g3ia6+V2em0TaVSfsW8qefXb9/4Bw0bEoyQDIGMiSMSghBB2Bf3v+juZfl48PoBGtAeS8t72oSjQhYs4aC3ls0bRERaW/uw+dx5yIc9BURMM2Zcv2DiBLVz513fbXujqGTBUAIBpApLgKhn9XDtm3Kd597464EjxmLtbNSgquaD+FFb+7CpSqXckkXTL8jVbfkfhLuoOGJYGGQhAMhQsZ5Q17aYDPb2Q6nu3zcEFdugxYWnD4LYblK+jQEmqPPxgMrrt289AcACIIPPDaj/zToF0OooMkc8Pu1nWwcedV1j+1KOQz0TNCQPTx4iCkMMVYWQRfvu3QsAgOHDd3/P+4rCN1947FLdtuFOydUHjoySCgcm2N29gKcInqK2wZ2+2BfX4P3pqh854y0K0fawIxeNpFzcbAQGKZELcxD1E1U1lkpl/qJx9bmbO0iA1qqKhiEPmzPzmq1HDb5xa4fOViKlwKovxKGIQeA1VFtut3TrtvTQB29/QQEaMXeuB4CHH55kUqmUXzX/ma+1tu66xRdaFVCBgoUYolJkBKi4f5GEQFo87QGkUPJtSr+PkPFSkVpUELSN8ik+R/FolLZWIpQUMODI5yHZhsHb33y1f1tRRJ/LkPXXsi/J52nQnDn//caJp9SFK5deU75lY1IhaBUQt+8Se6d7j+2dJo3/GlH7BlUlYlZ9+GFDqZRf89LMy5sa3rtZXQu8kloFG5a2NxYgVmhRNlFchj8rxj/eXk75K5TgX2t7FEexqZQGauu3bZsEYGlmwAD6XBSGH+nta/v/EbO+dOXlR3dd9ua5JQ35YT6WLDR0rnhGjxtyz2Hf+taa3fO8dk8fWvLS9MujbN2vfb4BpBGRCDHtBurPbualqAMZ9vGg0rSG8ZeHjvvKCQAKe7Yq/i3OGHp/4l0QQMMwBkDIGgcv78/hzWSKuqlFLz76HRfW3xC2NsBClL1QYGLwkbR1weQzfA4tJi9iYZKd8xWdDhjZ+8hj5u1WtnwuMeRv4Epx2E0UERGFROTSXljTaZ6i0ClTiFKpjF8057FrovzOG6LsDrEUqlEhhoF3AoXCGPqMn4NBygQtSBDzycbWbcMAIJPJ/HuErL+T1OiHml+6bHamxvmmawq5nQrJwygRJAZGDMVoJRBxAH12sy7VGxhSEDuRWIwl2Xn+ESO+NJyIdufc/5bHCu1pDAaANfOfuMRld/3ItzY4hCFiFJBBHIYCAAQvHqFEIPOXlfGn/S4pGKqONcoim60buGHDvAOKDbM0/duErL/BFjMRybvr1x9c39zyGzKelKw1nFRCwntvocrFNJQBYw28frbj3pWLaTEBUHVaErclLfX1IwFgSlu29e988JaqgpJh+HZ5WcdRnOx0h7fl22xJFxYqMWTjokziJVJAwUptRdtnGKUZkLY5cZaswLPs2tFwEgBMWVHcS/Jve0DKB72E/s0AXgDwQuuOjVPWrlo2SdR8xVBuELkWGKMQryIRK1GMwUKfVdhSlbYah6GOYJHkipIOy6qrq83KlSv/bUH9w25CmUyGq6tTsluEprqrcvVrL5wWtuw8N5ttHFKeLG3nQyAshCDKeyJQG2VBfxYktFjRFNnb3Xjzj3FnT9rrAyLkL/+dh4ANgyLvE/H2RmMdHjn4pEnnElH+c12p/xOe4ncbZ86cOYaoQyOA+wHc37h9XZ+1KxeN8wjHOM0eX2bVwnu4yEFUPOBBSoaprfUi0raUDGULVd9WCCmK3GcbKOkH1KEpjhcr3u9T+QTvPSwRqI0UJVJEPvIlFZ1NRJWPtuvQ+yIiyl944YXHjRlz5sqJE0fu+v/y8Nni2z+FgBr9wGs0WPLa1AElwITmXbvGedGD4pbj4guIwjwgkRhSMBUZKUXbgExxYCJQcU/L+2CgbRkTAPAeyYJQm2m0rWsoRaEAE6kYEpssM0rlU8PyDucNHTqm6fzzz5vw2utLHujarftNzz078+r/Lw/Z2s0at6WTPGLECCaiCMASAEtU9dodb74xbOPGt47jWHSKSPMxpXFicTmE+VYwkSMQG1VmNkXPaAtnRaPsNoBAwXDGFL1IBcX5FgIu9p2LIdBaeIEEsXKjpnxG61Z//vEjxzRdfMEF1bNmz717244dySiKTlPVn//HHM+822umTCnqjvf4efKtRXMGhIWmCQ27tp9mmQ5KBjZw+Rb4KK9g1iJRrMQMUpUPMb0MT0FR+qMeDF8U0hHBCwCOqReWZLLUiK14qiHb5bwTxp+w86tf/vK5z82Ze1dTS6vx6rRDZXs55OABY/9jjjbd02uA4gbOzp1XUJsiZQGABaqa3rTs5apNm7eMCuLxU8g0H1yU8HuEhRxE1UHJmOIMVLBqMY2lNrodUjSISnFaEgwERm2izJiSynvKeuz3zSP6HtX41a9+9StPP/3Mnc2tWUOGNIix7qzbbiPX95T/+APM38ebKcW9Le//vH5Du3Vr1gzKhrlUtqXxBEPaNzAeUS4LQqSkTkk9iMBOCbZ4PibERSAiiFoVk/CIVViOV/yxkSZddOKJ7L70pS9/7fnZs3/X3NJCsURMwyjHhqFQT3t177HtixPlP2yg2lqTQQZFheP7Rmu3/JWnTwyz9SeTi8aEYfNecQuQOIRhrnh+kAqrelhrETlR4UDiZR1NXhL3HjXq7AtLS0rCidVn/OC55+b8NJ8taFF/qkTs4X0Eawg+EnxhkL/nOVPaPIc+8JzmdUu67GjacXRj/fZz8oXciGSMO2khCx9F8CqqSsom4HhZBRwSdx5+QuoSAHbs2LG/X7h40TnZbFYMGVIQGUNFDZhECIyFyL94gOP/z8aZM2eOqaqq8nvi0I5Nqw98e83yMVaiSa0tzYONNTFiBnHQDJv4+VEnnvFTAKWjRo16cOkbK07Lh60Ss4a8UwqCOJyLAAi4qM+D9/4LD/lnMSeTWUm7w5qqJtYufm5/a4IjQ+8thOYdeETVat2wIXHC+V994I03lp/uPRXYuMAaZe+KIxLZWECLbQFVAVsD+8US//PZWnHAzBRuoz5Wtt3YXf8srKs7aOeOuhMBhTGIe6+IRL21BurVqLo2DXBxE6lzHuaLJf7nr5qaGp07d+7u2b08Z84cmlJUkVBNTY1efPHFO733dx544IErt23bGi8pKUkYY9s1NzczG4ao+CAI4MQRQEWe64tl/XQuay2WLVu236WXXjqciMavW7duTGtra9w5hyAIHDPz7obbF9cnHOXazt19Pxolk0ncfvvtfYcMGfL7Pn36vNOjRw+tqKjQDh066BfL9SlebYZ5H7eZGYsXL95vxIgR51VVVU3fa6+98l+s0mearX3gNfF4HDfccEOvL1bmc+Y1/w9ha4asK6OSLwAAAABJRU5ErkJggg==" alt="" class="logo-mark"><span>Ingenious Learning</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#courses">Courses</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#visit">Visit Us</a>
+      </div>
+      <div class="nav-cta">
+        <a href="tel:+916381821858" class="btn btn-ghost on-light">+91 63818 21858</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <span class="doodle" style="top:12%;left:4%;animation-delay:0s;">✏️</span>
+  <span class="doodle" style="top:70%;left:8%;animation-delay:1.2s;">🔤</span>
+  <span class="doodle" style="top:18%;right:6%;animation-delay:.6s;">⭐</span>
+  <span class="doodle" style="top:78%;right:12%;animation-delay:1.8s;">🎨</span>
+  <span class="doodle" style="top:45%;left:48%;animation-delay:2.4s;opacity:.3;">🧮</span>
+  <div class="container hero-grid">
+    <div>
+      <div class="hero-eyebrow"><span class="stars">★★★★★</span> 5.0 rating · 40+ parent reviews</div>
+      <h1>Where kids fall in love with <span class="underline">learning<svg viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true"><path d="M4,13 C40,4 62,18 96,10 C130,3 158,16 196,7"/></svg></span>, one sound at a time.</h1>
+      <p class="lede">Live, personalised classes in phonics, maths, music and art — for ages 4 to 15, taught with the individual attention every child deserves. In-person in Chitlapakkam or online, anywhere.</p>
+      <div class="hero-actions">
+        <a href="tel:+916381821858" class="btn btn-solid">📞 Call to Book a Free Demo</a>
+        <a href="#courses" class="btn btn-ghost on-dark">See all courses</a>
+      </div>
+      <div class="hero-chips">
+        <span class="hero-chip">🔤 Jolly Phonics</span>
+        <span class="hero-chip">🧮 Abacus &amp; Vedic Maths</span>
+        <span class="hero-chip">🎤 Spoken English</span>
+        <span class="hero-chip">🎶 Carnatic Music</span>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="board">
+        <div class="board-title">Today's Reminder</div>
+        <hr class="chalk-line">
+        <ul class="board-list">
+          <li>Every child gets individual, personal attention</li>
+          <li>Small batches, live feedback every class</li>
+          <li>16 courses across language, maths, music &amp; art</li>
+          <li>Free demo class before you enrol</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="container trust-row">
+    <div class="trust-item"><div class="num">40+</div><div class="lbl">5★ Parent Reviews</div></div>
+    <div class="trust-item"><div class="num">16</div><div class="lbl">Courses on Offer</div></div>
+    <div class="trust-item"><div class="num">4–15</div><div class="lbl">Ages We Teach</div></div>
+    <div class="trust-item"><div class="num">1:1</div><div class="lbl">Individual Attention</div></div>
+  </div>
+</div>
+
+<section class="about" id="about">
+  <div class="container">
+    <div class="section-eyebrow">About Us</div>
+    <h2 class="section-title">A learning centre built around each child</h2>
+    <div class="about-cols">
+      <div class="about-copy">
+        <p>Ingenious Learning helps children build strong foundations in reading, writing, maths and creative skills through classes that stay personal, never mass-produced. Parents consistently tell us the same thing: their child started looking forward to class.</p>
+        <p>Every session — whether it's Jolly Phonics for a four-year-old or Vedic Maths for a teenager preparing for exams — is run in small groups with real, individual feedback, both online and in person at our Chitlapakkam centre.</p>
+        <div class="founder">
+          <div class="founder-badge">PP</div>
+          <div class="founder-text">
+            <strong>Preethi Prathap</strong>
+            <span>Founder &amp; Lead Educator, Ingenious Learning</span>
+          </div>
+        </div>
+      </div>
+      <div class="locate-card" id="visit">
+        <h3>Visit the centre</h3>
+        <address>
+          No 24/4, Karunanidhi St, opposite Zion Driving School,<br>
+          Ambedkar Nagar, Chitlapakkam,<br>
+          Chennai, Tamil Nadu 600064
+        </address>
+        <div class="locate-actions">
+          <a class="btn btn-solid" href="https://www.google.com/maps/search/?api=1&query=No+24%2F4+Karunanidhi+St+Ambedkar+Nagar+Chitlapakkam+Chennai+600064" target="_blank" rel="noopener">Get Directions</a>
+          <a class="btn btn-ghost on-dark" href="https://wa.me/916381821858" target="_blank" rel="noopener">WhatsApp Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials" id="reviews">
+  <div class="container">
+    <div class="section-eyebrow">Parent Reviews</div>
+    <h2 class="section-title">What families in Chitlapakkam are saying</h2>
+    <p class="section-lede">Real reviews from real parents — the reason most of our new students arrive by word of mouth.</p>
+    <div class="t-grid">
+      <div class="t-card">
+        <div class="quote-mark">“</div>
+        <p class="body">My son has improved a lot in learning words, reading, and confidence after joining phonics classes. Preethi Mam and Priya Mam provide amazing support and individual care. Highly recommend!</p>
+        <div class="who">— Rajesh Vijayan</div>
+      </div>
+      <div class="t-card">
+        <div class="quote-mark">“</div>
+        <p class="body">My daughter struggled with reading before, but after 6 months with Preethi Mam, she now reads fluently and speaks nicely. Individual attention made all the difference. Thank you!</p>
+        <div class="who">— Maha Lakshmi</div>
+      </div>
+      <div class="t-card">
+        <div class="quote-mark">“</div>
+        <p class="body">Before joining, my son had difficulties in reading and lost interest. Now his interest in learning new words is growing daily. They give regular feedback and motivate every child individually.</p>
+        <div class="who">— Mohana Priyadarshini</div>
+      </div>
+      <div class="t-card">
+        <div class="quote-mark">“</div>
+        <p class="body">My son was lazy in learning reading and writing. After Jolly Phonics here, he has improved massively in reading, writing, and handwriting. He eagerly waits for classes!</p>
+        <div class="who">— Anjana Devi</div>
+      </div>
+      <div class="t-card">
+        <div class="quote-mark">“</div>
+        <p class="body">Preethi is a wonderful teacher who gives special care to every student. The centre is spacious, attractive, and kids enjoy learning. Strongly recommended in the Chitlapakkam area.</p>
+        <div class="who">— Sharmila Baskaran</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="courses" id="courses">
+  <div class="container">
+    <div class="section-eyebrow">Our Courses</div>
+    <h2 class="section-title">So many ways to fall in love with learning</h2>
+    <p class="section-lede">Grouped by skill area so you can find the right fit fast. Every course starts with a free demo class.</p>
+
+    <div class="finder">
+      <div class="finder-row">
+        <div class="finder-field">
+          <label for="ageInput">How old is your child?</label>
+          <div class="age-control">
+            <button type="button" class="age-btn" id="ageMinus" aria-label="Decrease age">−</button>
+            <input type="number" id="ageInput" min="3" max="18" placeholder="Any" inputmode="numeric" aria-describedby="ageHelp">
+            <button type="button" class="age-btn" id="agePlus" aria-label="Increase age">+</button>
+          </div>
+          <small id="ageHelp">Leave blank to see everything</small>
+        </div>
+        <div class="finder-field grow">
+          <label for="searchInput">Search courses</label>
+          <input type="search" id="searchInput" placeholder="e.g. phonics, maths, music…">
+        </div>
+      </div>
+
+      <div class="filter-row" role="group" aria-label="Filter by category">
+        <button type="button" class="filter-chip active" data-filter="all">✨ All Courses</button>
+        <button type="button" class="filter-chip" data-filter="lang" style="--chip:var(--coral);">🔤 Language &amp; Literacy</button>
+        <button type="button" class="filter-chip" data-filter="maths" style="--chip:#b37a13;">🧮 Maths &amp; Brain</button>
+        <button type="button" class="filter-chip" data-filter="arts" style="--chip:var(--plum);">🎨 Arts &amp; Music</button>
+        <button type="button" class="filter-chip" data-filter="conf" style="--chip:var(--teal);">🎤 Confidence</button>
+        <button type="button" class="filter-chip" data-filter="edu" style="--chip:var(--teal-dark);">👩‍🏫 For Educators</button>
+      </div>
+
+      <div class="finder-status">
+        <span id="resultCount">Showing all 16 courses</span>
+        <button type="button" class="reset-btn" id="resetFilters" hidden>Clear filters ✕</button>
+      </div>
+    </div>
+
+    <div class="no-results" id="noResults" hidden>
+      <div class="no-results-emoji">🔍</div>
+      <h4>No courses match that yet</h4>
+      <p>Try a different age or search term — or just call us, and we'll help you pick.</p>
+      <a href="tel:+916381821858" class="btn btn-solid">📞 Ask Us Directly</a>
+    </div>
+
+    <!-- Language & Literacy -->
+    <div class="course-group" data-cat="lang">
+      <div class="group-head">
+        <div class="group-tag" style="background:var(--coral);">🔤</div>
+        <div><h3>Language &amp; Literacy</h3><span>Reading, writing and speaking, built step by step</span></div>
+      </div>
+      <div class="course-grid">
+        <div class="course-card" data-course="jolly-phonics" data-cat="lang" data-minage="4" tabindex="0" role="button" aria-haspopup="dialog">
+          <span class="card-emoji" aria-hidden="true">🔤</span>
+          <span class="course-tag" style="background:var(--coral);">Ages 4+</span>
+          <h4>Jolly Phonics</h4>
+          <p class="meta">Fun sounds &amp; actions · live songs and stories · 12–16 weeks</p>
+          <span class="view-link" style="color:var(--coral-dark);">View benefits →</span>
+        </div>
+        <div class="course-card" data-course="tamil-phonics" data-cat="lang" data-minage="4" tabindex="0" role="button" aria-haspopup="dialog">
+          <span class="card-emoji" aria-hidden="true">🪔</span>
+          <span class="course-tag" style="background:var(--coral);">Ages 4+</span>
+          <h4 class="ta">Tamil Phonics</h4>
+          <p class="meta">உயிர் மெய் எழுத்துகள் &amp; ஒலி இணைப்பு — letter sounds, blending &amp; fluent reading through stories and games</p>
+          <span class="view-link" style="color:var(--coral-dark);">View benefits →</span>
+        </div>
+        <div class="course-card" data-course="jolly-grammar" data-cat="lang" data-minage="7" tabindex="0" role="button" aria-haspopup="dialog">
+          <span class="card-emoji" aria-hidden="true">📘</span>
+          <span class="course-tag" style="background:var(--coral);">Ages 7+</span>
+          <h4>Jolly Grammar</h4>
+          <p class="meta">Building strong English basics through stories &amp; games</p>
+          <span class="view-link" style="color:var(--coral-dark);">View benefits →</span>
+        </div>
+        <div class="course-card" data-course="spell-bee" data-cat="lang" data-minage="7" tabindex="0" role="button" aria-haspopup="dialog">
+          <span class="card-emoji" aria-hidden="true">🐝</span>
+          <span class="course-tag" style="background:var(--coral);">Ages 7+</span>
+          <h4>Spell Bee Championship Training</h4>
+          <p class="meta">Vocabulary building + spelling strategies for competitions</p>
+          <span class="view-link" style="color:var(--coral-dark);">View benefits →</span>
+        </div>
+        <div class="course-card" data-course="handwriting" data-cat="lang" data-minage="5" tabindex="0" role="button" aria-haspopup="dialog">
+          <span class="card-emoji" aria-hidden="true">✍️</span>
+          <span class="course-tag" style="background:var(--coral);">Ages 5+</span>
+          <h4>Beautiful Handwriting Mastery</h4>
+          <p class="meta">Cursive &amp; print styles, taught with fun worksheets</p>
+          <span class="view-link" style="color:var(--coral-dark);">View benefits →</span>
+        </div>
+        <div class="course-card" data-course="creative-writing" data-cat="lang" data-minage="7" tabindex="0" role="button" aria-haspopup="dialog">
+          <span class="card-emoji" aria-hidden="true">📖</span>
+          <span class="course-tag" style="background:var(--coral);">Ages 7+</span>
+          <h4>Creative Writing &amp; Storytelling</h4>
+          <p class="meta">Stories, poems and a big imagination boost</p>
+          <span class="view-link" style="color:var(--coral-dark);">View benefits →</span>
+        </div>
+        <div class="course-card" data-course="spoken-english" data-cat="lang" data-minage="7" tabindex="0" role="button" aria-haspopup="dialog">
+          <span class="card-emoji" aria-hidden="true">💬</span>
+          <span class="course-tag" style="background:var(--coral);">Ages 7+</span>
+          <h4>Confident Spoken English</h4>
+          <p class="meta">Conversation practice + pronunciation coaching</p>
+          <span class="view-link" style="color:var(--coral-dark);">View benefits →</span>
+        </div>
+        <div class="course-card" data-course="hindi" data-cat="lang" data-minage="5" tabindex="0" role="button" aria-haspopup="dialog">
+          <span class="card-emoji" aria-hidden="true">🕉️</span>
+          <span class="course-tag" style="background:var(--coral);">Ages 5+</span>
+          <h4>Hindi — Reading, Writing &amp; Speaking</h4>
+          <p class="meta">Matras, stories and grammar fundamentals</p>
+          <span class="view-link" style="color:var(--coral-dark);">View benefits →</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Maths & Brain -->
+    <div class="course-group" data-cat="maths">
+      <div class="group-head">
+        <div class="group-tag" style="background:var(--mango);">🧮</div>
+        <div><h3>Maths &amp; Brain Skills</h3><span>Speed, accuracy and sharper focus</span></div>
+      </div>
+      <div class="course-grid">
+        <div class="course-card" data-course="abacus" data-cat="maths" data-minage="5" tabindex="0" role="button" aria-haspopup="dialog">
+          <span class="card-emoji" aria-hidden="true">🧮</span>
+          <span class="course-tag" style="background:var(--mango);color:#5a3a06;">Ages 5+</span>
+          <h4>Abacus — Fast Mental Maths</h4>
+          <p class="meta">Speed &amp; accuracy training with the abacus method</p>
+          <span class="view-link" style="color:#9c6a12;">View benefits →</span>
+        </div>
+        <div class="course-card" data-course="vedic-maths" data-cat="maths" data-minage="11" tabindex="0" role="button" aria-haspopup="dialog">
+          <span class="card-emoji" aria-hidden="true">⚡</span>
+          <span class="course-tag" style="background:var(--mango);color:#5a3a06;">Ages 11+</span>
+          <h4>Vedic Maths</h4>
+          <p class="meta">Superfast calculation tricks, built for exam pressure</p>
+          <span class="view-link" style="color:#9c6a12;">View benefits →</span>
+        </div>
+        <div class="course-card" data-course="bda" data-cat="maths" data-minage="5" tabindex="0" role="button" aria-haspopup="dialog">
+          <span class="card-emoji" aria-hidden="true">🧩</span>
+          <span class="course-tag" style="background:var(--mango);color:#5a3a06;">Ages 5+</span>
+          <h4>BDA — Brain Development Activities</h4>
+          <p class="meta">Puzzles, memory games and focus-building exercises</p>
+          <span class="view-link" style="color:#9c6a12;">View benefits →</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Arts & Music -->
+    <div class="course-group" data-cat="arts">
+      <div class="group-head">
+        <div class="group-tag" style="background:var(--plum);">🎨</div>
+        <div><h3>Arts &amp; Music</h3><span>Hands-on creativity, at every skill level</span></div>
+      </div>
+      <div class="course-grid">
+        <div class="course-card" data-course="carnatic-music" data-cat="arts" data-minage="7" tabindex="0" role="button" aria-haspopup="dialog">
+          <span class="card-emoji" aria-hidden="true">🎶</span>
+          <span class="course-tag" style="background:var(--plum);">Ages 7+</span>
+          <h4>Carnatic Music — Vocal Basics</h4>
+          <p class="meta">Swaras, geethams &amp; bhajans for beginners</p>
+          <span class="view-link" style="color:var(--plum);">View benefits →</span>
+        </div>
+        <div class="course-card" data-course="drawing" data-cat="arts" data-minage="5" tabindex="0" role="button" aria-haspopup="dialog">
+          <span class="card-emoji" aria-hidden="true">🎨</span>
+          <span class="course-tag" style="background:var(--plum);">Ages 5+</span>
+          <h4>Fun Drawing &amp; Sketching</h4>
+          <p class="meta">Colours, shapes and cartoon styles</p>
+          <span class="view-link" style="color:var(--plum);">View benefits →</span>
+        </div>
+        <div class="course-card" data-course="lippan-art" data-cat="arts" data-minage="7" tabindex="0" role="button" aria-haspopup="dialog">
+          <span class="card-emoji" aria-hidden="true">🪞</span>
+          <span class="course-tag" style="background:var(--plum);">Ages 7+</span>
+          <h4>Lippan Art — Mirror Work Magic</h4>
+          <p class="meta">Traditional Gujarati mirror &amp; mud art · builds fine motor skills · adult supervision recommended</p>
+          <span class="view-link" style="color:var(--plum);">View benefits →</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Confidence -->
+    <div class="course-group" data-cat="conf">
+      <div class="group-head">
+        <div class="group-tag" style="background:var(--teal);">🎤</div>
+        <div><h3>Confidence Building</h3><span>Finding a voice, and using it</span></div>
+      </div>
+      <div class="course-grid">
+        <div class="course-card" data-course="public-speaking" data-cat="conf" data-minage="10" tabindex="0" role="button" aria-haspopup="dialog">
+          <span class="card-emoji" aria-hidden="true">🎤</span>
+          <span class="course-tag" style="background:var(--teal);">Ages 10+</span>
+          <h4>Public Speaking &amp; Confidence Building</h4>
+          <p class="meta">Speeches, debates and stage presence practice</p>
+          <span class="view-link" style="color:var(--teal-dark);">View benefits →</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Teacher Training -->
+    <div class="course-group" data-cat="edu">
+      <div class="group-head">
+        <div class="group-tag" style="background:var(--teal-dark);">👩‍🏫</div>
+        <div><h3>For Educators</h3><span>Training for aspiring and practising teachers</span></div>
+      </div>
+      <div class="course-grid">
+        <div class="course-card" data-course="teacher-training" data-cat="edu" data-minage="18" tabindex="0" role="button" aria-haspopup="dialog">
+          <span class="card-emoji" aria-hidden="true">👩‍🏫</span>
+          <span class="course-tag" style="background:var(--teal-dark);">For Adults</span>
+          <h4>Teacher Training</h4>
+          <p class="meta">Jolly Phonics &amp; early-learning teaching methodology for aspiring and practising educators</p>
+          <span class="view-link" style="color:var(--teal-dark);">View benefits →</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="teens-note">
+      <strong>Also offered — for older teens &amp; adults:</strong> Resin Art (Shiny Creations), ages 18+ only. Epoxy resin pouring for keychains, coasters and more. Requires safety gear and good ventilation; not run as a children's class. Call the centre for current batch timings.
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <h2>Ready for your child's first class?</h2>
+    <p>Join hundreds of happy parents in Chitlapakkam. Start with a free, no-obligation demo class.</p>
+    <a href="tel:+916381821858" class="btn btn-solid">📞 Call +91 63818 21858</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Ingenious Learning</h4>
+        <p>Live, personalised classes in phonics, maths, music and art for ages 4–15. In-person in Chitlapakkam, Chennai, or online.</p>
+      </div>
+      <div>
+        <h4>Get in Touch</h4>
+        <p><a href="tel:+916381821858">+91 63818 21858</a></p>
+        <p><a href="https://wa.me/916381821858" target="_blank" rel="noopener">WhatsApp</a></p>
+        <p>No 24/4, Karunanidhi St, Ambedkar Nagar,<br>Chitlapakkam, Chennai 600064</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <p><a href="#about">About Us</a></p>
+        <p><a href="#courses">All Courses</a></p>
+        <p><a href="#reviews">Parent Reviews</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025–2026 Ingenious Learning. Founded by Preethi Prathap, Chennai, India.</span>
+      <span>Web page created by Dhiraj Ram</span>
+    </div>
+  </div>
+</footer>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<div class="float-actions">
+  <button class="float-btn float-top" id="backToTop" aria-label="Back to top">▲</button>
+  <a class="float-btn float-wa" href="https://wa.me/916381821858?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20your%20classes." target="_blank" rel="noopener" aria-label="WhatsApp us">💬</a>
+  <a class="float-btn float-call" href="tel:+916381821858" aria-label="Call us">📞</a>
+</div>
+
+<div class="modal-overlay" id="courseModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-card">
+    <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+    <span class="modal-emoji" id="modalEmoji" aria-hidden="true"></span>
+    <span class="modal-tag" id="modalTag"></span>
+    <h3 id="modalTitle"></h3>
+    <p class="modal-meta" id="modalMeta"></p>
+    <div class="modal-benefits-title">Why kids benefit</div>
+    <ul class="modal-benefits" id="modalBenefits"></ul>
+    <a href="tel:+916381821858" class="btn btn-solid">📞 Call to Book This Demo</a>
+    <a href="#" class="btn btn-ghost on-light" id="modalWhatsapp" target="_blank" rel="noopener" style="margin-top:.6rem;">💬 Ask About This on WhatsApp</a>
+  </div>
+</div>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // ---------- Course benefits data ----------
+  const courseData = {
+    'jolly-phonics': {
+      title: 'Jolly Phonics', tag: 'Ages 4+', color: 'var(--coral)',
+      meta: 'Fun sounds & actions · live songs and stories · 12–16 weeks',
+      benefits: [
+        'Learns all 42 letter sounds through actions, songs and stories, not rote memorisation',
+        'Builds blending skills so reading "cat" or "dog" clicks naturally, not through guesswork',
+        'Multisensory method suits wiggly 4–7 year-olds who learn best by doing, not sitting still',
+        'Lays the exact foundation needed for Jolly Grammar and independent reading later on'
+      ]
+    },
+    'tamil-phonics': {
+      title: 'Tamil Phonics', tag: 'Ages 4+', color: 'var(--coral)',
+      meta: 'உயிர் மெய் எழுத்துகள் & ஒலி இணைப்பு — letter sounds, blending & fluent reading',
+      benefits: [
+        'Builds a strong base in உயிர் and மெய் letters before children fall behind in school Tamil',
+        'Blending practice turns individual letters into real, fluent word reading',
+        'Stories and games keep a second/heritage language fun instead of feeling like homework',
+        'Strengthens cultural and family connection through confident Tamil reading and speech'
+      ]
+    },
+    'jolly-grammar': {
+      title: 'Jolly Grammar', tag: 'Ages 7+', color: 'var(--coral)',
+      meta: 'Building strong English basics through stories & games',
+      benefits: [
+        'Turns confusing grammar rules into memorable stories and games instead of drills',
+        'Strengthens sentence structure, punctuation and spelling all at once',
+        'Directly builds on Jolly Phonics, so reading gains carry into writing',
+        'Gives children the confidence to write independently for school assignments'
+      ]
+    },
+    'spell-bee': {
+      title: 'Spell Bee Championship Training', tag: 'Ages 7+', color: 'var(--coral)',
+      meta: 'Vocabulary building + spelling strategies for competitions',
+      benefits: [
+        'Teaches proven spelling strategies (roots, patterns, mnemonics) instead of blind memorising',
+        'Rapidly expands vocabulary, which improves reading comprehension across every subject',
+        'Builds competition temperament — composure, quick recall and stage confidence',
+        'Gives strong, motivated readers a structured way to push further'
+      ]
+    },
+    'handwriting': {
+      title: 'Beautiful Handwriting Mastery', tag: 'Ages 5+', color: 'var(--coral)',
+      meta: 'Cursive & print styles, taught with fun worksheets',
+      benefits: [
+        'Improves letter formation and pencil grip for neater, faster schoolwork',
+        'Covers both print and cursive so children are exam-ready either way',
+        'Builds fine motor control that supports drawing, art and other hands-on skills',
+        'Neater handwriting often boosts a child\'s confidence in their own written work'
+      ]
+    },
+    'creative-writing': {
+      title: 'Creative Writing & Storytelling', tag: 'Ages 7+', color: 'var(--coral)',
+      meta: 'Stories, poems and a big imagination boost',
+      benefits: [
+        'Turns a blank page into a fun challenge instead of a source of anxiety',
+        'Strengthens vocabulary, structure and voice — skills that carry into school essays',
+        'Encourages imaginative thinking and self-expression beyond textbook writing',
+        'Builds a genuine habit of writing for enjoyment, not just for marks'
+      ]
+    },
+    'spoken-english': {
+      title: 'Confident Spoken English', tag: 'Ages 7+', color: 'var(--coral)',
+      meta: 'Conversation practice + pronunciation coaching',
+      benefits: [
+        'Builds fluency through real conversation practice, not textbook memorisation',
+        'Corrects pronunciation early, before habits are harder to unlearn',
+        'Grows the confidence to speak up in class, interviews and everyday situations',
+        'Small-group format means every child actually gets to talk, every class'
+      ]
+    },
+    'hindi': {
+      title: 'Hindi — Reading, Writing & Speaking', tag: 'Ages 5+', color: 'var(--coral)',
+      meta: 'Matras, stories and grammar fundamentals',
+      benefits: [
+        'Builds matras and letter recognition from the ground up, at a comfortable pace',
+        'Combines reading, writing and speaking so the language sticks, not just one skill',
+        'Stories and games make a third language feel achievable, not overwhelming',
+        'Prepares children for school Hindi exams and everyday conversational use'
+      ]
+    },
+    'abacus': {
+      title: 'Abacus — Fast Mental Maths', tag: 'Ages 5+', color: 'var(--mango)',
+      meta: 'Speed & accuracy training with the abacus method',
+      benefits: [
+        'Builds genuine mental maths speed — not just faster fingers, faster thinking',
+        'Strengthens concentration and visualisation, which helps well beyond maths class',
+        'Gives children a real edge on timed school tests and competitions',
+        'Progressive levels keep the challenge appropriate as skill grows'
+      ]
+    },
+    'vedic-maths': {
+      title: 'Vedic Maths', tag: 'Ages 11+', color: 'var(--mango)',
+      meta: 'Superfast calculation tricks, built for exam pressure',
+      benefits: [
+        'Teaches shortcut techniques that cut calculation time dramatically in exams',
+        'Builds number sense, so maths feels intuitive instead of just formula recall',
+        'Reduces exam-time anxiety by replacing long working with quick mental methods',
+        'Complements school maths syllabus rather than replacing it'
+      ]
+    },
+    'bda': {
+      title: 'BDA — Brain Development Activities', tag: 'Ages 5+', color: 'var(--mango)',
+      meta: 'Puzzles, memory games and focus-building exercises',
+      benefits: [
+        'Sharpens memory, focus and logical thinking through age-appropriate puzzles',
+        'Builds patience and problem-solving persistence in a low-pressure, game-based format',
+        'Supports better concentration in the classroom, not just during class time',
+        'Great starting point for younger children before Abacus or Vedic Maths'
+      ]
+    },
+    'carnatic-music': {
+      title: 'Carnatic Music — Vocal Basics', tag: 'Ages 7+', color: 'var(--plum)',
+      meta: 'Swaras, geethams & bhajans for beginners',
+      benefits: [
+        'Builds a solid foundation in swaras and geethams for genuine musical literacy',
+        'Trains listening, pitch and rhythm — skills that transfer to any instrument later',
+        'Connects children to a rich cultural and devotional music tradition',
+        'Regular practice builds discipline alongside musical skill'
+      ]
+    },
+    'drawing': {
+      title: 'Fun Drawing & Sketching', tag: 'Ages 5+', color: 'var(--plum)',
+      meta: 'Colours, shapes and cartoon styles',
+      benefits: [
+        'Builds fine motor control and hand-eye coordination through regular practice',
+        'Encourages creative confidence — there\'s no "wrong" way to draw here',
+        'Introduces colour, proportion and composition in a playful, low-pressure way',
+        'Gives children a relaxing, screen-free creative outlet'
+      ]
+    },
+    'lippan-art': {
+      title: 'Lippan Art — Mirror Work Magic', tag: 'Ages 7+', color: 'var(--plum)',
+      meta: 'Traditional Gujarati mirror & mud art · adult supervision recommended',
+      benefits: [
+        'Introduces a traditional folk art form most children never encounter in school',
+        'Builds fine motor precision through detailed mirror and mud-work techniques',
+        'Results in a real, displayable craft piece — great for confidence and pride',
+        'Recommended for ages 10+, with adult supervision for the mud-and-mirror steps'
+      ]
+    },
+    'public-speaking': {
+      title: 'Public Speaking & Confidence Building', tag: 'Ages 10+', color: 'var(--teal)',
+      meta: 'Speeches, debates and stage presence practice',
+      benefits: [
+        'Builds real stage comfort through practice speeches and debates, not just theory',
+        'Strengthens structured thinking — organising an argument or idea clearly',
+        'Reduces stage fright through repeated, supportive, low-stakes practice',
+        'Confidence gained here carries into school presentations, exams and beyond'
+      ]
+    },
+    'teacher-training': {
+      title: 'Teacher Training', tag: 'For Adults', color: 'var(--teal-dark)',
+      meta: 'Jolly Phonics & early-learning teaching methodology for aspiring and practising educators',
+      benefits: [
+        'Learn the Jolly Phonics and early-literacy teaching method hands-on, not just in theory',
+        'Practical classroom techniques for keeping young children engaged and on-task',
+        'Useful for aspiring teachers, tuition tutors, and parents who home-school',
+        'Small-batch training with direct, personal guidance from an experienced educator'
+      ]
+    }
+  };
+
+  // ---------- Course modal ----------
+  const modal = document.getElementById('courseModal');
+  const modalClose = document.getElementById('modalClose');
+  const modalTag = document.getElementById('modalTag');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalMeta = document.getElementById('modalMeta');
+  const modalBenefits = document.getElementById('modalBenefits');
+  let lastFocused = null;
+
+  const courseEmoji = {
+    'jolly-phonics':'🔤','tamil-phonics':'🪔','jolly-grammar':'📘','spell-bee':'🐝',
+    'handwriting':'✍️','creative-writing':'📖','spoken-english':'💬','hindi':'🕉️',
+    'abacus':'🧮','vedic-maths':'⚡','bda':'🧩','carnatic-music':'🎶','drawing':'🎨',
+    'lippan-art':'🪞','public-speaking':'🎤','teacher-training':'👩‍🏫'
+  };
+
+  function openModal(key){
+    const data = courseData[key];
+    if(!data) return;
+    document.getElementById('modalEmoji').textContent = courseEmoji[key] || '🎓';
+    document.getElementById('modalWhatsapp').href =
+      'https://wa.me/916381821858?text=' +
+      encodeURIComponent(`Hi, I'd like to know more about the ${data.title} class.`);
+    modalTag.textContent = data.tag;
+    modalTag.style.background = data.color;
+    modalTitle.textContent = data.title;
+    modalMeta.textContent = data.meta;
+    modalBenefits.innerHTML = '';
+    data.benefits.forEach(b => {
+      const li = document.createElement('li');
+      li.textContent = b;
+      modalBenefits.appendChild(li);
+    });
+    lastFocused = document.activeElement;
+    modal.classList.add('open');
+    modalClose.focus();
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal(){
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+    if(lastFocused) lastFocused.focus();
+  }
+
+  document.querySelectorAll('.course-card[data-course]').forEach(card => {
+    card.addEventListener('click', () => openModal(card.dataset.course));
+    card.addEventListener('keydown', (e) => {
+      if(e.key === 'Enter' || e.key === ' '){
+        e.preventDefault();
+        openModal(card.dataset.course);
+      }
+    });
+  });
+
+  modalClose.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => { if(e.target === modal) closeModal(); });
+  document.addEventListener('keydown', (e) => {
+    if(e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+  });
+
+  // ---------- Scroll reveal ----------
+  const revealTargets = document.querySelectorAll(
+    '.course-group, .t-card, .about-copy, .locate-card, .trust-item, .teens-note'
+  );
+  revealTargets.forEach(el => el.classList.add('reveal'));
+
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if(entry.isIntersecting){
+          setTimeout(() => entry.target.classList.add('in'), i * 70);
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealTargets.forEach(el => io.observe(el));
+  } else {
+    revealTargets.forEach(el => el.classList.add('in'));
+  }
+
+  // ---------- Confetti on demo clicks ----------
+  const confettiColors = ['#E85D4C','#F2A93B','#6C5B9E','#1F4E45','#4FBF8B','#4AA8E0'];
+  function burstConfetti(x, y){
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    for(let i = 0; i < 26; i++){
+      const bit = document.createElement('span');
+      const size = 6 + Math.random() * 7;
+      bit.style.cssText = `
+        position:fixed;left:${x}px;top:${y}px;width:${size}px;height:${size * 0.6}px;
+        background:${confettiColors[i % confettiColors.length]};
+        border-radius:2px;z-index:999;pointer-events:none;
+        transform:translate(-50%,-50%) rotate(${Math.random() * 360}deg);
+      `;
+      document.body.appendChild(bit);
+      const angle = (Math.PI * 2 * i) / 26 + Math.random() * 0.5;
+      const dist = 60 + Math.random() * 90;
+      bit.animate([
+        { transform: bit.style.transform, opacity: 1 },
+        { transform: `translate(${Math.cos(angle) * dist - 50}%, ${Math.sin(angle) * dist + 260}%) rotate(${Math.random() * 720}deg)`, opacity: 0 }
+      ], { duration: 1100 + Math.random() * 500, easing: 'cubic-bezier(.2,.7,.4,1)' })
+      .onfinish = () => bit.remove();
+    }
+  }
+
+  document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const r = link.getBoundingClientRect();
+      burstConfetti(r.left + r.width / 2, r.top + r.height / 2);
+    });
+  });
+
+  // ---------- Course finder: filter by category, age and search ----------
+  const allCards = Array.from(document.querySelectorAll('.course-card[data-course]'));
+  const allGroups = Array.from(document.querySelectorAll('.course-group[data-cat]'));
+  const chips = Array.from(document.querySelectorAll('.filter-chip[data-filter]'));
+  const ageInput = document.getElementById('ageInput');
+  const searchInput = document.getElementById('searchInput');
+  const resultCount = document.getElementById('resultCount');
+  const resetBtn = document.getElementById('resetFilters');
+  const noResults = document.getElementById('noResults');
+  let activeCat = 'all';
+
+  function applyFilters(){
+    const age = parseInt(ageInput.value, 10);
+    const q = searchInput.value.trim().toLowerCase();
+    let visible = 0;
+
+    allCards.forEach(card => {
+      const catOk = activeCat === 'all' || card.dataset.cat === activeCat;
+      const ageOk = isNaN(age) || age >= parseInt(card.dataset.minage, 10);
+      const text = card.textContent.toLowerCase();
+      const qOk = !q || text.includes(q);
+      const show = catOk && ageOk && qOk;
+      card.classList.toggle('hide', !show);
+      if(show) visible++;
+    });
+
+    // hide a whole group if none of its cards survive
+    allGroups.forEach(group => {
+      const anyVisible = group.querySelectorAll('.course-card:not(.hide)').length > 0;
+      group.classList.toggle('hide', !anyVisible);
+    });
+
+    const filtering = activeCat !== 'all' || !isNaN(age) || q;
+    resetBtn.hidden = !filtering;
+    noResults.hidden = visible > 0;
+
+    if(visible === 0){
+      resultCount.textContent = 'No matching courses';
+    } else if(!filtering){
+      resultCount.textContent = `Showing all ${visible} courses`;
+    } else {
+      const bits = [];
+      if(!isNaN(age)) bits.push(`age ${age}`);
+      if(q) bits.push(`"${searchInput.value.trim()}"`);
+      resultCount.textContent =
+        `${visible} course${visible === 1 ? '' : 's'}` + (bits.length ? ` for ${bits.join(' · ')}` : '');
+    }
+  }
+
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      chips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      activeCat = chip.dataset.filter;
+      applyFilters();
+    });
+  });
+
+  ageInput.addEventListener('input', applyFilters);
+  searchInput.addEventListener('input', applyFilters);
+
+  document.getElementById('ageMinus').addEventListener('click', () => {
+    const v = parseInt(ageInput.value, 10);
+    ageInput.value = isNaN(v) ? 8 : Math.max(3, v - 1);
+    applyFilters();
+  });
+  document.getElementById('agePlus').addEventListener('click', () => {
+    const v = parseInt(ageInput.value, 10);
+    ageInput.value = isNaN(v) ? 8 : Math.min(18, v + 1);
+    applyFilters();
+  });
+
+  resetBtn.addEventListener('click', () => {
+    activeCat = 'all';
+    chips.forEach(c => c.classList.toggle('active', c.dataset.filter === 'all'));
+    ageInput.value = '';
+    searchInput.value = '';
+    applyFilters();
+  });
+
+  applyFilters();
+
+  // ---------- Animated stat counters ----------
+  const statEls = document.querySelectorAll('.trust-item .num');
+  function animateStat(el){
+    const raw = el.textContent.trim();
+    const match = raw.match(/^(\d+)(\D*)$/);
+    if(!match) return;                       // skip "4–15", "1:1"
+    const target = parseInt(match[1], 10);
+    const suffix = match[2] || '';
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    let cur = 0;
+    const step = Math.max(1, Math.round(target / 28));
+    const timer = setInterval(() => {
+      cur += step;
+      if(cur >= target){ cur = target; clearInterval(timer); }
+      el.textContent = cur + suffix;
+    }, 35);
+  }
+  if('IntersectionObserver' in window){
+    const statObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if(e.isIntersecting){ animateStat(e.target); statObs.unobserve(e.target); }
+      });
+    }, { threshold: 0.6 });
+    statEls.forEach(el => statObs.observe(el));
+  }
+
+  // ---------- Scroll progress + back to top ----------
+  const progress = document.getElementById('scrollProgress');
+  const backToTop = document.getElementById('backToTop');
+  function onScroll(){
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = max > 0 ? (window.scrollY / max) * 100 : 0;
+    progress.style.width = pct + '%';
+    backToTop.classList.toggle('show', window.scrollY > 600);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+</body>
+</html>
